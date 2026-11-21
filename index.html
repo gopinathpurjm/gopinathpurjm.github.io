@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark"><meta name="theme-color" content="#00170e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="description" content="গোপীনাথপুর জামে মসজিদ — ডিজিটাল মসজিদ ব্যবস্থাপনা">
 <link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
-<title>গোপীনাথপুর জামে মসজিদ</title><script>try{var d=document.documentElement,p=localStorage.getItem("theme");if(p!=="light"&&p!=="auto")p="dark";var mt=localStorage.gm_mtheme;mt=mt==="neon"||mt==="green"?mt:"noor";var dk=mt!=="noor"&&(p==="dark"||(p==="auto"&&matchMedia("(prefers-color-scheme: dark)").matches));d.setAttribute("data-theme",dk?"dark":"light");d.dataset.mtheme=mt;var m=document.querySelector("meta[name=theme-color]");if(m)m.content=dk?(d.dataset.mtheme==="neon"?"#050a24":"#00170e"):"#0b6b4f"}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
+<title>গোপীনাথপুর জামে মসজিদ</title><script>try{var d=document.documentElement,p=localStorage.getItem("theme");if(p!=="light"&&p!=="dark")p="auto";var mt=localStorage.gm_mtheme;mt="v3";d.classList.add("v3");var dk=(p==="dark"||(p==="auto"&&matchMedia("(prefers-color-scheme: dark)").matches));d.setAttribute("data-theme",dk?"dark":"light");d.dataset.mtheme=mt;var m=document.querySelector("meta[name=theme-color]");if(m)m.content=dk?(d.dataset.mtheme==="neon"?"#050a24":"#00170e"):"#0b6b4f"}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
 <style>
 /* গোপীনাথপুর জামে মসজিদ — নতুন ডিজাইন: গোধূলির আকাশ, মসজিদের বাতির আলো
    মোবাইল-ফার্স্ট। ক্লাসের নাম আগের মতোই, তাই app.js/cloud.js বদলাতে হয়নি। */
@@ -552,6 +552,98 @@ html[data-mtheme=noor]{--deep:#063d29;--pri:#0b6b45;--green:#0b6b45;--green2:#12
 .nr-bar{height:8px;background:var(--mint);border-radius:5px;overflow:hidden;margin:8px 0 2px}.nr-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pri),var(--gold))}
 .nr-don{display:flex;gap:12px;align-items:center}.nr-don .m{flex:1;min-width:0}.nr-gold{border:0;border-radius:14px;padding:10px 12px;background:var(--gold);color:#3a2a00;font-family:inherit;font-weight:700;font-size:13px;line-height:1.3;cursor:pointer}
 </style>
+<style id="v3css">/* ===== v3: মসজিদ অ্যাপ — সবুজ ডিজাইন (লাইট + ডার্ক) ===== */
+html.v3[data-theme=light]:root{--paper:#eef6f1;--white:#fff;--ink:#0f2b1f;--muted:#5a7466;--line:#d5e7dc;--pri:#0c6a43;--green:#0c6a43;--green2:#15955d;--mint:#dff4e8;--gold:#d9a93c;--gold2:#8a6410;--goldsoft:#fbf0cf;--glass:#ffffffd9;--shadow:0 14px 34px -18px #0c4a2e66;color-scheme:light}
+html.v3[data-theme=dark]:root{--paper:#07140e;--white:#0f2219;--ink:#eaf6ee;--muted:#9bb8a7;--line:#1f3d2e;--pri:#17a366;--green:#4fd89b;--green2:#1fb374;--mint:#123a2b;--gold:#e8c260;--gold2:#f0d287;--goldsoft:#33290f;--glass:#0f2219d9;--shadow:0 14px 34px -16px #000c;color-scheme:dark}
+html.v3[data-theme] body{background:var(--paper)!important;color:var(--ink)}
+html.v3[data-theme] .topbar{background:var(--glass)!important;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)!important}
+html.v3[data-theme] .icon-btn,html.v3[data-theme] .profile{background:var(--white)!important;border:1px solid var(--line)!important;color:var(--green)!important;border-radius:14px}
+html.v3[data-theme] .panel,html.v3[data-theme] .page-card,html.v3[data-theme] .stat,html.v3[data-theme] .tile,html.v3[data-theme] .qcard,html.v3[data-theme] .prayer-card{background:var(--white)!important;border:1px solid var(--line)!important;border-radius:20px;box-shadow:var(--shadow);color:var(--ink)}
+html.v3[data-theme] .prayer-card.next,html.v3[data-theme] .hero+.stats .stat:first-child{background:linear-gradient(135deg,var(--green2),var(--pri))!important;color:#fff!important}
+html.v3[data-theme] .btn{background:linear-gradient(135deg,var(--green2),var(--pri))!important;color:#fff!important;border:0!important;border-radius:14px;box-shadow:0 10px 20px -10px var(--pri)}
+html.v3[data-theme] .btn.secondary{background:var(--mint)!important;color:var(--green)!important;box-shadow:none}
+html.v3[data-theme] input,html.v3[data-theme] select,html.v3[data-theme] textarea{background:var(--white)!important;color:var(--ink)!important;border:1px solid var(--line)!important;border-radius:12px}
+html.v3[data-theme] .modal{background:var(--white)!important;color:var(--ink);border:1px solid var(--line)}
+html.v3[data-theme] .sidebar{background:linear-gradient(180deg,#0b6b45,#06301f)!important;border:0!important}
+html.v3[data-theme] .sidebar *{color:#eafff3}
+html.v3[data-theme] .nav-item.active{background:#ffffff26!important}
+html.v3 .nav-item[data-page=admin],html.v3 .nav-item[data-page=team]{display:none!important}
+html.v3 #adminShortcut{display:none!important}html.v3 body.is-admin #adminShortcut{display:grid!important}
+html.v3 .adm-link{display:flex;gap:8px;align-items:center;margin:10px 14px;padding:10px 12px;border-radius:12px;background:#00000026;border:0;font:600 13px 'Anek Bangla',sans-serif;cursor:pointer;color:#eafff3}
+html.v3[data-theme] .is-home .topbar,html.v3[data-theme] .is-home footer{display:none}
+html.v3[data-theme] .is-home .content{padding:0 0 120px;max-width:560px;margin:0 auto}
+/* হোম */
+.mq{max-width:560px;margin:0 auto;font-family:'Anek Bangla',sans-serif}
+.mq-hero{position:relative;height:350px;color:#fff;text-align:center;overflow:hidden;background:linear-gradient(180deg,#073d28 0,#0d6b45 55%,#2f9a6d 100%)}
+.mq-hero:before{content:"";position:absolute;left:0;right:0;bottom:0;height:230px;background:url(mosque.jpg) center bottom/cover no-repeat;-webkit-mask-image:linear-gradient(180deg,transparent,#000 38%,#000 82%,transparent);mask-image:linear-gradient(180deg,transparent,#000 38%,#000 82%,transparent)}
+html[data-theme=dark] .mq-hero:before{filter:brightness(.6) saturate(.85)}
+.mq-hero:after{content:"";position:absolute;left:0;right:0;bottom:0;height:70px;background:linear-gradient(transparent,var(--paper))}
+.mq-hero>*{position:relative;z-index:2}
+.mq-bar{display:flex;justify-content:space-between;align-items:center;padding:calc(env(safe-area-inset-top,0px) + 14px) 14px 0}
+.mq-bar div{display:flex;gap:8px}
+.mq-ib{width:42px;height:42px;border-radius:50%;border:1px solid #ffffff55;background:#ffffff26;color:#fff;font-size:18px;backdrop-filter:blur(8px);cursor:pointer;position:relative;display:grid;place-items:center}
+.mq-ib b{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;border-radius:9px;background:#ff3b4a;font-size:10px;display:grid;place-items:center}
+.mq-logo{width:70px;height:70px;margin:2px auto 4px;filter:drop-shadow(0 0 12px #ffe9a0aa)}
+.mq-hero h1{margin:0;font:700 27px/1.15 'Tiro Bangla','Anek Bangla',serif;text-shadow:0 2px 14px #000a}
+.mq-hero p{margin:6px 0 0;font-size:13px;letter-spacing:.5px;opacity:.95;text-shadow:0 1px 8px #000a}
+.mq-install{margin-top:12px;border:0;border-radius:22px;padding:8px 16px;background:linear-gradient(135deg,#f6d77a,#d9a93c);color:#3a2800;font:700 13px 'Anek Bangla',sans-serif;cursor:pointer;box-shadow:0 8px 18px -8px #000a}
+.mq-next{display:flex;gap:16px;align-items:center;margin:-62px 14px 0;padding:16px 18px;border-radius:26px;background:var(--glass);backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:var(--shadow);position:relative;z-index:3}
+.mq-ring{position:relative;width:92px;height:92px;flex:none}
+.mq-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.mq-ring circle{fill:none;stroke-width:7;stroke-linecap:round}
+.mq-ring .bg{stroke:var(--mint)}
+.mq-ring .fg{stroke:var(--green2);stroke-dasharray:264;stroke-dashoffset:264;transition:stroke-dashoffset 1s linear}
+.mq-ring i{position:absolute;inset:0;display:grid;place-items:center;font-size:34px;font-style:normal}
+.mq-nx small{color:var(--muted);font-size:13px}
+.mq-nx strong{display:block;font:700 26px/1.2 'Anek Bangla';color:var(--ink)}
+.mq-nx time{display:block;font:800 30px/1.2 'Manrope','Anek Bangla';color:var(--green);letter-spacing:1px}
+.mq-nx span{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+.mq-prayers{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;padding:14px 14px 0}
+.mq-pr{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:9px 2px;text-align:center;cursor:pointer;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;gap:1px}
+.mq-pr .pi{font-size:18px}.mq-pr b{font-size:13px;color:var(--ink)}.mq-pr .t{font-size:11px;color:var(--muted)}
+.mq-pr.on{background:linear-gradient(160deg,var(--green2),var(--pri));border-color:transparent}
+.mq-pr.on b,.mq-pr.on .t{color:#fff}
+.mq-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:14px}
+.mq-tile{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:14px 4px 12px;font:600 13px/1.3 'Anek Bangla';color:var(--ink);cursor:pointer;box-shadow:var(--shadow);transition:transform .15s}
+.mq-tile:active{transform:scale(.95)}
+.mq-tile i{display:grid;place-items:center;width:46px;height:46px;margin:0 auto 7px;border-radius:15px;background:var(--mint);font-size:24px;font-style:normal}
+.mq-chips{display:flex;gap:8px;overflow-x:auto;padding:0 14px 6px;scrollbar-width:none}.mq-chips::-webkit-scrollbar{display:none}
+.mq-chip{flex:none;border:1px solid var(--line);background:var(--white);color:var(--green);border-radius:20px;padding:8px 14px;font:600 13px 'Anek Bangla';cursor:pointer}
+.mq-card{margin:12px 14px 0;padding:14px 16px;border-radius:20px;background:var(--white);border:1px solid var(--line);box-shadow:var(--shadow)}
+.mq-card h3{margin:0 0 4px;font:700 15px 'Anek Bangla';display:flex;justify-content:space-between;color:var(--ink)}
+.mq-card h3 a{font-size:12px;color:var(--green);cursor:pointer}
+.mq-bar2{height:8px;border-radius:5px;background:var(--mint);margin-top:8px;overflow:hidden}.mq-bar2 i{display:block;height:100%;background:linear-gradient(90deg,var(--green2),var(--gold))}
+.mq-don{display:flex;gap:12px;align-items:center}.mq-don>div{flex:1;min-width:0}
+.mq-gold{border:0;border-radius:16px;padding:10px 14px;background:linear-gradient(135deg,#f6d77a,#d9a93c);color:#3a2800;font:700 13px/1.3 'Anek Bangla';cursor:pointer}
+.mq-dua{margin:14px;padding:16px;border-radius:22px;text-align:center;color:#fff;background:linear-gradient(135deg,#0b6b45,#06301f);box-shadow:var(--shadow)}
+.mq-dua b{display:block;font:400 22px/1.6 'Amiri','Scheherazade New',serif}.mq-dua small{opacity:.85;font-size:12px}
+/* ডক */
+@media(max-width:760px){html.v3[data-theme] .dock{display:grid!important;grid-template-columns:1fr 1fr 76px 1fr 1fr;align-items:end;left:50%;right:auto;bottom:10px;transform:translateX(-50%);width:min(calc(100% - 20px),520px);padding:8px 6px calc(8px + env(safe-area-inset-bottom,0px));border-radius:28px;background:var(--glass)!important;backdrop-filter:blur(16px);border:1px solid var(--line)!important;box-shadow:0 16px 36px -12px #000a}
+html.v3[data-theme] .dock button{background:none!important;border:0;color:var(--muted);font:600 11px 'Anek Bangla';display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer}
+html.v3[data-theme] .dock button i{font-style:normal;font-size:21px;filter:grayscale(1) opacity(.7)}
+html.v3[data-theme] .dock button.on{color:var(--green)}html.v3[data-theme] .dock button.on i{filter:none}
+html.v3[data-theme] .dock .mid{width:62px;height:62px;border-radius:50%;margin:-30px auto 0;background:linear-gradient(145deg,#1fb374,#0a5a3a)!important;border:4px solid var(--paper)!important;box-shadow:0 10px 22px -6px #0a5a3acc;justify-content:center}
+html.v3[data-theme] .dock .mid i{filter:none;font-size:28px}
+.content{padding-bottom:120px}}
+html.v3[data-theme] .mq-pr.on{background:linear-gradient(160deg,var(--green2),var(--pri))!important;border-color:transparent!important;box-shadow:0 10px 20px -10px var(--pri)}
+body:not(.is-admin) .quick,body:not(.is-admin) [data-q],body:not(.is-admin) [data-txd]{display:none!important}
+/* পপআপ / শিট */
+.mqp{position:fixed;inset:0;z-index:9999;background:#02100a99;backdrop-filter:blur(4px);display:flex;align-items:flex-end;justify-content:center;animation:mqf .25s}
+.mqp-s{width:min(100%,520px);max-height:88vh;overflow:auto;background:var(--white);color:var(--ink);border-radius:28px 28px 0 0;padding:22px 20px calc(22px + env(safe-area-inset-bottom,0px));box-shadow:0 -20px 50px -20px #000;animation:mqu .35s cubic-bezier(.2,.9,.3,1);font-family:'Anek Bangla',sans-serif;text-align:center}
+.mqp-s:before{content:"";display:block;width:42px;height:4px;border-radius:2px;background:var(--line);margin:-10px auto 14px}
+.mqp-ic{width:82px;height:82px;margin:0 auto 10px;border-radius:26px;display:grid;place-items:center;font-size:42px;background:linear-gradient(145deg,#1fb374,#0a5a3a);box-shadow:0 14px 28px -10px #0a5a3acc;animation:mqb 2.2s ease-in-out infinite}
+.mqp-s h2{margin:0 0 6px;font:700 21px 'Tiro Bangla','Anek Bangla',serif;color:var(--ink)}
+.mqp-s p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.6}
+.mqp-ft{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0 0 16px}.mqp-ft span{background:var(--mint);color:var(--green);border-radius:14px;padding:5px 11px;font-size:12px;font-weight:600}
+.mqp-go{width:100%;border:0;border-radius:16px;padding:14px;background:linear-gradient(135deg,#1fb374,#0a5a3a);color:#fff;font:700 16px 'Anek Bangla';cursor:pointer;box-shadow:0 12px 24px -10px #0a5a3a}
+.mqp-no{width:100%;border:0;background:none;color:var(--muted);font:600 14px 'Anek Bangla';padding:12px;cursor:pointer}
+.mq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+.mq-gi{border:1px solid var(--line);background:var(--paper);border-radius:16px;padding:12px 4px;font:600 12px/1.3 'Anek Bangla';color:var(--ink);cursor:pointer}.mq-gi i{display:block;font-size:24px;font-style:normal;margin-bottom:4px}
+.mq-seg{display:flex;gap:6px;background:var(--paper);border-radius:14px;padding:4px;margin:8px 0}.mq-seg button{flex:1;border:0;border-radius:11px;padding:9px;background:none;color:var(--muted);font:600 13px 'Anek Bangla';cursor:pointer}.mq-seg button.on{background:var(--white);color:var(--green);box-shadow:0 2px 8px #0003}
+.mq-row{display:flex;align-items:center;gap:10px;width:100%;border:1px solid var(--line);background:var(--paper);border-radius:14px;padding:12px;margin-top:8px;font:600 14px 'Anek Bangla';color:var(--ink);cursor:pointer;text-align:left}.mq-row.adm{background:none;border-style:dashed;color:var(--muted)}
+.mq-steps{text-align:left;background:var(--paper);border-radius:14px;padding:12px 14px;margin:0 0 14px;font-size:13.5px;line-height:1.8;color:var(--ink)}
+@keyframes mqu{from{transform:translateY(100%)}}@keyframes mqf{from{opacity:0}}@keyframes mqb{50%{transform:translateY(-5px) scale(1.04)}}
+</style>
 </head>
 <body>
 <div class="app-shell">
@@ -584,7 +676,7 @@ html[data-mtheme=noor]{--deep:#063d29;--pri:#0b6b45;--green:#0b6b45;--green2:#12
 </main></div>
 <div class="toast" id="toast"></div>
 <div class="modal-backdrop" id="modalBackdrop"><section class="modal" id="modal"><button class="modal-close" id="closeModal">×</button><div id="modalBody"></div></section></div>
-<nav class="dock" id="dock"><button data-page="home"><i>🏠</i>হোম</button><button data-page="prayer"><i>🕐</i>নামাজ</button><button class="mid" data-page="committee" aria-label="পরিচিতি"><i>🕌</i></button><button data-page="gallery"><i>🖼️</i>গ্যালারি</button><button><i>☰</i>মেনু</button></nav>
+<nav class="dock" id="dock"><button data-page="home"><i>🏠</i>হোম</button><button data-page="library"><i>📖</i>কুরআন</button><button class="mid" data-page="committee" aria-label="পরিচিতি"><i>🕌</i></button><button data-page="events"><i>📅</i>ইভেন্ট</button><button data-more><i>☰</i>আরও</button></nav>
 <script>
 window.FIREBASE_CONFIG = {
   apiKey: "AIzaSyCporGjEQRLK5lGD56whFDEeSb8Jos6dIc",
@@ -878,7 +970,7 @@ const closeDom=()=>{sb.classList.remove('open');mb.classList.remove('show')};
 const closeAll=()=>history.state&&history.state.ov?history.back():closeDom();
 $('#sideX').onclick=closeAll;
 document.addEventListener('click',e=>{
- if(e.target.closest('#menuBtn')||e.target.closest('#dock button:not([data-page])')){e.stopImmediatePropagation();e.preventDefault();sb.classList.contains('open')?closeAll():sb.classList.add('open');return}
+ if(e.target.closest('#menuBtn')||e.target.closest('#dock button[data-never]')){e.stopImmediatePropagation();e.preventDefault();sb.classList.contains('open')?closeAll():sb.classList.add('open');return}
  if(sb.classList.contains('open')&&!e.target.closest('#sidebar'))closeAll();
 },true);
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&isOpen())closeAll()});
@@ -937,9 +1029,9 @@ function enhance(){
  const L=txs().sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0,10);
  st.insertAdjacentHTML('afterend',`<div class="quick"><button class="q in" data-q="আয়">＋ আয় লিখুন</button><button class="q out" data-q="ব্যয়">− ব্যয় লিখুন</button></div>
  <div class="panel"><div class="section-head"><h3>সর্বশেষ লেনদেন</h3><button class="btn secondary small" id="prt1">🖨 ১ পেজে প্রিন্ট</button></div>${L.map(x=>`<div class="tx"><div><b>${esc(x.category||'অন্যান্য')}</b><small>${esc(x.date||'')} · ${esc(x.note||x.name||'')}</small></div><span class="amt ${x.kind==='আয়'?'in':'out'}">${x.kind==='আয়'?'+':'−'} ${money(x.amount)}</span><span class="txb">${x.kind==='আয়'?`<button data-rc="${x.id}" title="রসিদ">🧾</button>`:''}<button data-txd="${x.id}" title="মুছুন">🗑</button></span></div>`).join('')||'<div class="empty">এখনো কোনো লেনদেন নেই</div>'}</div>`);
- $$('.quick .q').forEach(b=>b.onclick=()=>{window._kind=b.dataset.q;action('addAccount')});
+ $$('.quick .q').forEach(b=>b.onclick=()=>{if(!document.body.classList.contains('is-admin'))return toast('শুধু অ্যাডমিন হিসাব লিখতে পারবেন');window._kind=b.dataset.q;action('addAccount')});
  $('#prt1').onclick=printOne;
- $$('[data-txd]').forEach(b=>b.onclick=()=>requirePin(()=>{if(!confirm('এই লেনদেনটি মুছবেন?'))return;const id=b.dataset.txd;db.accounts=db.accounts.filter(y=>y.id!=id);db.donations=db.donations.filter(y=>y.id!=id);save();render();toast('মুছে ফেলা হয়েছে')}));
+ $$('[data-txd]').forEach(b=>b.onclick=()=>document.body.classList.contains('is-admin')?requirePin(()=>{if(!confirm('এই লেনদেনটি মুছবেন?'))return;const id=b.dataset.txd;db.accounts=db.accounts.filter(y=>y.id!=id);db.donations=db.donations.filter(y=>y.id!=id);save();render();toast('মুছে ফেলা হয়েছে')}):toast('শুধু অ্যাডমিন মুছতে পারবেন'));
  $$('[data-rc]').forEach(b=>b.onclick=()=>{const x=txs().find(y=>y.id==b.dataset.rc);if(x)receipt(x)})}
 function receipt(x){let el=$('#printSheet');if(!el){el=document.createElement('div');el.id='printSheet';document.body.appendChild(el)}
  el.innerHTML=`<div class="ps-in" style="zoom:1"><div class="ps-h"><b>গোপীনাথপুর জামে মসজিদ</b><span>দানের রসিদ</span></div><table><tr><td>রসিদ নং</td><td>${esc(x.receiptNo||x.id)}</td></tr><tr><td>তারিখ</td><td>${esc(x.date||'')}</td></tr><tr><td>দাতা</td><td>${esc(x.name||x.recipient||'—')}</td></tr><tr><td>খাত</td><td>${esc(x.category||'')}</td></tr><tr><td>টাকা</td><td><b>${money(x.amount)}</b></td></tr></table><div class="ps-sig"><span>গ্রহণকারী</span><span>কোষাধ্যক্ষ</span></div><small>জাযাকাল্লাহু খাইরান — আল্লাহ কবুল করুন</small></div>`;
@@ -992,7 +1084,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-library],[
  else if(b.dataset.library in LINKS){e.stopImmediatePropagation();open('<h2>বাইরের নির্ভরযোগ্য উৎস</h2><p class="muted">এই বিষয়বস্তু বাংলা সহ নির্ভরযোগ্য ওয়েবসাইটে আছে।</p><div class="modal-actions"><a class="btn" target="_blank" rel="noopener" href="'+LINKS[b.dataset.library]+'">ওয়েবসাইট খুলুন ↗</a></div>')}},true);
 /* ---- থিম (লাইট/ডার্ক/অটো), বড় লেখা, ঘড়ি: সাইডবারে ---- */
 const G=k=>{try{return localStorage.getItem(k)}catch(e){return null}},W=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
-const MQ=matchMedia('(prefers-color-scheme: dark)');const getPref=()=>{const t=G('theme');return t==='light'||t==='auto'?t:'dark'};const resolveTheme=()=>{const t=getPref();if(document.documentElement.dataset.mtheme==='noor')return 'light';return t==='auto'?(MQ.matches?'dark':'light'):t};const ap=()=>{const t=getPref(),r=document.documentElement,rt=resolveTheme();r.setAttribute('data-theme',rt);const mc=document.querySelector('meta[name=theme-color]');if(mc)mc.content=rt==='light'?'#0b6b4f':(r.dataset.mtheme==='neon'?'#050a24':'#00170e');document.body.classList.toggle('big',G('bg')==='1');$$('[data-th]').forEach(x=>x.classList.toggle('on',x.dataset.th===t));const bb=$('#bgBtn');if(bb)bb.classList.toggle('on',G('bg')==='1')};window._applyMode=ap;window._getPref=getPref;window._resolveTheme=resolveTheme;const onMQ=()=>{if(getPref()==='auto'){ap();render()}};MQ.addEventListener?MQ.addEventListener('change',onMQ):MQ.addListener&&MQ.addListener(onMQ);
+const MQ=matchMedia('(prefers-color-scheme: dark)');const getPref=()=>{const t=G('theme');return t==='light'||t==='dark'?t:'auto'};const resolveTheme=()=>{const t=getPref();if(document.documentElement.dataset.mtheme==='noor')return 'light';return t==='auto'?(MQ.matches?'dark':'light'):t};const ap=()=>{const t=getPref(),r=document.documentElement,rt=resolveTheme();r.setAttribute('data-theme',rt);const mc=document.querySelector('meta[name=theme-color]');if(mc)mc.content=rt==='light'?'#0b6b4f':(r.dataset.mtheme==='neon'?'#050a24':'#00170e');document.body.classList.toggle('big',G('bg')==='1');$$('[data-th]').forEach(x=>x.classList.toggle('on',x.dataset.th===t));const bb=$('#bgBtn');if(bb)bb.classList.toggle('on',G('bg')==='1')};window._applyMode=ap;window._getPref=getPref;window._resolveTheme=resolveTheme;const onMQ=()=>{if(getPref()==='auto'){ap();render()}};MQ.addEventListener?MQ.addEventListener('change',onMQ):MQ.addListener&&MQ.addListener(onMQ);
 $('.sidebar-foot').insertAdjacentHTML('beforebegin','<div class="prefs"><b>দেখার ধরন</b><div class="seg"><button data-th="light">☀ লাইট</button><button data-th="dark">☾ ডার্ক</button><button data-th="auto">অটো</button></div><div class="seg"><button id="bgBtn">A+ বড় লেখা</button><span id="clkSlot" style="flex:1;display:flex"></span></div></div>');
 const ck=$('#clockBtn');if(ck)$('#clkSlot').appendChild(ck);
 $$('[data-th]').forEach(x=>x.onclick=()=>{W('theme',x.dataset.th);ap();render()});$('#bgBtn').onclick=()=>{W('bg',G('bg')==='1'?'0':'1');ap()};ap();
@@ -1199,11 +1291,25 @@ document.addEventListener('click',e=>{
  const _mb=e.target.closest('[data-mode]');if(_mb){setMode(_mb.dataset.mode);themeSheet();return}
  if(e.target.closest('[data-ai]')){e.preventDefault();aiSheet();return}
  const k=e.target.closest('[data-pick]');if(k){try{if(k.dataset.pick!=='noor'&&!isDark())localStorage.setItem('theme','dark')}catch(_){}setTheme(k.dataset.pick);typeof closeModal==='function'?closeModal():$('#modalBackdrop').classList.remove('show');toast(({noor:'নূর থিম চালু',neon:'নিয়ন থিম চালু'})[k.dataset.pick]||'সবুজ-সোনালি থিম চালু')}});
-home=function(){return curTheme()==='noor'?homeNoor():(!isDark()?homeLight():(curTheme()==='neon'?homeNeon():homeGreen()))};
+const homeMosque=function(){
+ const don=sum(db.donations,'amount'),goal=db.settings.goal||1,pct=Math.min(100,Math.round(don/goal*100)),n=db.notices.slice().reverse()[0],fri=new Date().getDay()===5,th=localStorage.theme,mi=th==='light'?'☀':th==='dark'?'☾':'◐';
+ const tiles=[['prayer','🕐','নামাজের<br>সময়'],['library','📖','কুরআন ও<br>শিক্ষা'],['library','🤲','দোয়া ও<br>যিকির'],['committee','🕌','মসজিদ<br>পরিচিতি'],['events','📅','ইভেন্ট ও<br>মাহফিল'],['donations','💝','দান ও<br>সদকা']];
+ const chips=[['notices','📢 নোটিশ'],['accounts','📈 আয়-ব্যয়'],['community','👥 কমিউনিটি'],['gallery','🖼️ ছবি'],['archive','🗂 পুরোনো হিসাব'],['blood','🩸 রক্তদাতা']];
+ const logo='<svg class="mq-logo" viewBox="0 0 80 80"><path d="M50 6a13 13 0 1 0 8 18 10 10 0 0 1-8-18z" fill="#ffe9a0"/><path d="M22 62V46q0-18 18-18t18 18v16z" fill="#fff" fill-opacity=".92"/><rect x="38" y="20" width="4" height="9" fill="#ffe9a0"/><rect x="10" y="40" width="8" height="22" fill="#fff" fill-opacity=".9"/><rect x="62" y="40" width="8" height="22" fill="#fff" fill-opacity=".9"/><path d="M10 40l4-10 4 10zM62 40l4-10 4 10z" fill="#ffe9a0"/><path d="M34 62V54a6 6 0 0 1 12 0v8z" fill="#0d6b45"/><rect x="6" y="62" width="68" height="5" rx="2" fill="#ffe9a0"/></svg>';
+ return `<div class="mq"><header class="mq-hero"><div class="mq-bar"><button class="mq-ib" data-open-more aria-label="মেনু">☰</button><div><button class="mq-ib" data-mode-cycle aria-label="থিম">${mi}</button><button class="mq-ib" data-go="notices" aria-label="নোটিশ">🔔<b>${Number(db.notices.length).toLocaleString('bn-BD')}</b></button></div></div>${logo}<h1>গোপীনাথপুর জামে মসজিদ</h1><p>ঈমান · শান্তি · জীবন</p><button class="mq-install" data-install hidden>⤓ অ্যাপ ইনস্টল করুন</button></header>
+ <section class="mq-next"><div class="mq-ring"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="42"/><circle class="fg" cx="50" cy="50" r="42"/></svg><i>🕌</i></div><div class="mq-nx"><small>পরবর্তী নামাজ</small><strong id="mNm">—</strong><time id="mCd">০০:০০:০০</time><span>${esc(new Intl.DateTimeFormat('bn-BD',{weekday:'short',day:'numeric',month:'short',year:'numeric'}).format(new Date()))} · ${esc(hj())}</span></div></section>
+ <section class="mq-prayers">${NM.map((k,i)=>`<div class="m-pr mq-pr" data-k="${k}" data-go="prayer"><span class="pi">${IC[i]}</span><b>${k==='যোহর'&&fri?'জুমা':k}</b><span class="t">${esc(tm(k))}</span></div>`).join('')}</section>
+ <section class="mq-tiles">${tiles.map(t=>`<button class="mq-tile" data-go="${t[0]}"><i>${t[1]}</i>${t[2]}</button>`).join('')}</section>
+ <div class="mq-chips">${chips.map(c=>`<button class="mq-chip" data-go="${c[0]}">${c[1]}</button>`).join('')}<button class="mq-chip" data-ai>✨ AI সহকারী</button></div>
+ <section class="mq-card"><h3>সর্বশেষ নোটিশ <a data-go="notices">সব দেখুন ›</a></h3><p style="margin:0">${n?esc(n.title):'এখনো কোনো ঘোষণা নেই'}</p><small style="color:var(--muted)">${n?'📅 '+esc(n.date):''}</small></section>
+ <section class="mq-card mq-don"><div><b>মসজিদ উন্নয়নে সহযোগিতা করুন</b><div style="font-size:13px;color:var(--muted)">জমা: ${money(don)} / ${money(goal)} · ${Number(pct).toLocaleString('bn-BD')}%</div><div class="mq-bar2"><i style="width:${pct}%"></i></div></div><button class="mq-gold" data-go="donations">❤ এখনই<br>দান করুন</button></section>
+ <section class="mq-dua"><b>اللهم بارك لنا في هذا المسجد</b><small>হে আল্লাহ, এই মসজিদে আমাদের বরকত দিন</small></section></div>`};
+home=function(){return homeMosque()};
+
 {const sf=document.querySelector('.sidebar-foot');if(sf)sf.insertAdjacentHTML('beforebegin','<button class="nav-item" data-theme>🎨 <span>থিম পরিবর্তন</span></button><button class="nav-item" data-ai>✨ <span>AI সহকারী</span></button>')}
 function tick(){const el=document.getElementById('mCd');if(!el)return;const x=nextP();if(!x)return;
  let s=Math.max(0,Math.floor((x.d-new Date())/1e3));el.textContent=b2(s/3600|0)+':'+b2(s%3600/60|0)+':'+b2(s%60);document.getElementById('mNm').textContent=x.n;
- document.querySelectorAll('.m-pr,.n-pl').forEach(c=>c.classList.toggle('on',c.dataset.k===x.k))}
+ document.querySelectorAll('.m-pr,.n-pl').forEach(c=>c.classList.toggle('on',c.dataset.k===x.k));const rf=document.querySelector('.mq-ring .fg');if(rf)rf.style.strokeDashoffset=(264*(1-Math.min(1,Math.max(0,1-s/43200)))).toFixed(1)}
 const _r=render;render=function(){_r();document.body.classList.toggle('is-home',page==='home');tick()};
 setInterval(tick,1000);render();
 })();
@@ -1340,4 +1446,43 @@ if(c)new MutationObserver(place).observe(c,{childList:true});
 if(nv)new MutationObserver(function(){setTimeout(place,50)}).observe(nv,{attributes:true,subtree:true,attributeFilter:['class']});
 refresh();conn();setTimeout(place,600);
 })()</script>
+<script id="v3js">(function(){
+var $=function(s){return document.querySelector(s)},LS=localStorage,dp=null;
+var sa=matchMedia('(display-mode: standalone)').matches||navigator.standalone,ios=/iphone|ipad|ipod/i.test(navigator.userAgent);
+var recent=function(k,d){var t=+LS.getItem(k)||0;return Date.now()-t<d*864e5},mark=function(k){LS.setItem(k,Date.now())};
+function close(){var e=$('#mqp');if(e)e.remove()}
+function sheet(h){close();var e=document.createElement('div');e.id='mqp';e.className='mqp';e.innerHTML='<div class="mqp-s">'+h+'</div>';e.addEventListener('click',function(ev){if(ev.target===e)close()});document.body.appendChild(e);return e}
+function sync(){document.querySelectorAll('[data-install]').forEach(function(b){b.hidden=sa||!(dp||ios)})}
+addEventListener('beforeinstallprompt',function(e){e.preventDefault();dp=e;sync()});
+addEventListener('appinstalled',function(){sa=true;sync();close();setTimeout(showNotif,1200)});
+new MutationObserver(sync).observe(document.body,{childList:true,subtree:true});
+function showInstall(){if(sa)return;mark('gm_ins');
+ var steps=ios?'<div class="mq-steps">১. Safari-র নিচে <b>Share ⎋</b> বোতাম চাপুন<br>২. <b>“Add to Home Screen”</b> বেছে নিন<br>৩. <b>Add</b> চাপুন</div>':(dp?'':'<div class="mq-steps">ব্রাউজারের মেনু (⋮) থেকে <b>“Install app”</b> বা <b>“Add to Home screen”</b> চাপুন।</div>');
+ var e=sheet('<div class="mqp-ic">🕌</div><h2>অ্যাপটি ইনস্টল করুন</h2><p>হোম স্ক্রিনে রাখুন — এক ট্যাপে নামাজের সময়, নোটিশ ও হিসাব। ইন্টারনেট কম থাকলেও চলবে।</p><div class="mqp-ft"><span>⚡ দ্রুত</span><span>📴 অফলাইন</span><span>🔔 নোটিফিকেশন</span></div>'+steps+(ios||!dp?'':'<button class="mqp-go" id="mqI">⤓ এখনই ইনস্টল করুন</button>')+'<button class="mqp-no" id="mqN">'+(ios||!dp?'ঠিক আছে':'পরে করব')+'</button>');
+ e.querySelector('#mqN').onclick=close;var b=e.querySelector('#mqI');if(b)b.onclick=function(){if(!dp)return;dp.prompt();dp.userChoice.then(function(r){dp=null;sync();close();if(r.outcome==='accepted')setTimeout(showNotif,1500)})}}
+function showNotif(){if(!('Notification'in window)||(ios&&!sa)||Notification.permission!=='default'||LS.getItem('push_token'))return;mark('gm_np');
+ var e=sheet('<div class="mqp-ic">🔔</div><h2>নোটিফিকেশন চালু করুন</h2><p>নতুন ঘোষণা, জরুরি নোটিশ ও জামাতের আগে নামাজের রিমাইন্ডার সরাসরি ফোনে পাবেন — অ্যাপ বন্ধ থাকলেও।</p><div class="mqp-ft"><span>🕌 জামাত রিমাইন্ডার</span><span>📢 নতুন নোটিশ</span><span>🤲 জানাজা</span></div><button class="mqp-go" id="mqY">🔔 হ্যাঁ, চালু করুন</button><button class="mqp-no" id="mqL">এখন নয়</button>');
+ e.querySelector('#mqL').onclick=close;e.querySelector('#mqY').onclick=function(){close();var nb=$('#notifyBtn');if(nb){nb.click();var o=$('#pOn');if(o)o.click()}}}
+var EM={home:'🏠',prayer:'🕐',notices:'📢',donations:'💝',accounts:'📈',committee:'🕌',library:'📖',community:'👥',events:'📅',gallery:'🖼️',archive:'🗂️',blood:'🩸'};
+function more(){var items=[].slice.call(document.querySelectorAll('#nav .nav-item')).filter(function(b){return b.dataset.page!=='admin'&&b.dataset.page!=='team'});
+ var th=LS.theme==='light'||LS.theme==='dark'?LS.theme:'auto',adm=document.body.classList.contains('is-admin'),own=document.body.classList.contains('is-owner');
+ var e=sheet('<h2>সব সেবা</h2><div class="mq-grid">'+items.map(function(b,i){return '<button class="mq-gi" data-i="'+i+'"><i>'+(EM[b.dataset.page]||'🌙')+'</i>'+b.querySelector('span').textContent+'</button>'}).join('')+'</div><div class="mq-seg">'+[['light','☀ লাইট'],['dark','☾ ডার্ক'],['auto','◐ অটো']].map(function(x){return '<button data-m="'+x[0]+'" class="'+(th===x[0]?'on':'')+'">'+x[1]+'</button>'}).join('')+'</div>'+((sa||!(dp||ios))?'':'<button class="mq-row" id="mqIn">⤓ অ্যাপ ইনস্টল করুন</button>')+(('Notification'in window&&Notification.permission!=='granted')?'<button class="mq-row" id="mqNo">🔔 নোটিফিকেশন চালু করুন</button>':'')+(own?'<button class="mq-row" id="mqTm">👥 অ্যাডমিন ব্যবস্থাপনা</button>':'')+'<button class="mq-row adm" id="mqAd">🔐 '+(adm?'অ্যাডমিন প্যানেল':'অ্যাডমিন লগইন')+'</button>');
+ e.addEventListener('click',function(ev){var g=ev.target.closest('.mq-gi'),m=ev.target.closest('[data-m]');
+  if(g){close();items[+g.dataset.i].click()}
+  else if(m){var b=document.querySelector('.prefs [data-th='+m.dataset.m+']');if(b)b.click();close()}
+  else if(ev.target.closest('#mqIn')){close();showInstall()}
+  else if(ev.target.closest('#mqNo')){close();showNotif()}
+  else if(ev.target.closest('#mqTm')){close();var t=document.querySelector('.nav-item[data-page=team]');t&&t.click()}
+  else if(ev.target.closest('#mqAd')){close();var a=document.querySelector('.nav-item[data-page=admin]');a&&a.click()}})}
+window.openMore=more;
+document.addEventListener('click',function(e){var t=e.target;
+ if(t.closest('[data-open-more],#dock [data-more]')){e.stopImmediatePropagation();e.preventDefault();more()}
+ else if(t.closest('[data-mode-cycle]')){e.stopImmediatePropagation();var c=LS.theme==='light'||LS.theme==='dark'?LS.theme:'auto',n={auto:'light',light:'dark',dark:'auto'}[c],b=document.querySelector('.prefs [data-th='+n+']');if(b)b.click()}
+ else if(t.closest('[data-install]')){e.stopImmediatePropagation();showInstall()}},true);
+var sf=$('.sidebar-foot');if(sf)sf.insertAdjacentHTML('beforebegin','<button class="adm-link" id="admLink">🔐 অ্যাডমিন</button>');
+var al=$('#admLink');if(al)al.onclick=function(){var a=document.querySelector('.nav-item[data-page=admin]');a&&a.click()};
+var ib=$('#installBtn');if(ib)ib.style.display='none';
+setTimeout(function(){sync();if(sa){if(!recent('gm_np',3))showNotif()}else if((dp||ios)&&!recent('gm_ins',2))showInstall();else if(!recent('gm_np',3))showNotif()},2200);
+})();
+</script>
 </body></html>
