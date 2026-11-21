@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark"><meta name="theme-color" content="#00170e"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="description" content="গোপীনাথপুর জামে মসজিদ — ডিজিটাল মসজিদ ব্যবস্থাপনা">
 <link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><link rel="apple-touch-icon" href="apple-touch-icon.png">
-<title>গোপীনাথপুর জামে মসজিদ</title><script>try{var d=document.documentElement,p=localStorage.getItem("theme");if(p!=="light"&&p!=="auto")p="dark";var dk=p==="dark"||(p==="auto"&&matchMedia("(prefers-color-scheme: dark)").matches);d.setAttribute("data-theme",dk?"dark":"light");d.dataset.mtheme=localStorage.gm_mtheme==="neon"?"neon":"green";var m=document.querySelector("meta[name=theme-color]");if(m)m.content=dk?(d.dataset.mtheme==="neon"?"#050a24":"#00170e"):"#0b6b4f"}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
+<title>গোপীনাথপুর জামে মসজিদ</title><script>try{var d=document.documentElement,p=localStorage.getItem("theme");if(p!=="light"&&p!=="auto")p="dark";var mt=localStorage.gm_mtheme;mt=mt==="neon"||mt==="green"?mt:"noor";var dk=mt!=="noor"&&(p==="dark"||(p==="auto"&&matchMedia("(prefers-color-scheme: dark)").matches));d.setAttribute("data-theme",dk?"dark":"light");d.dataset.mtheme=mt;var m=document.querySelector("meta[name=theme-color]");if(m)m.content=dk?(d.dataset.mtheme==="neon"?"#050a24":"#00170e"):"#0b6b4f"}catch(e){document.documentElement.setAttribute("data-theme","dark")}</script>
 <style>
 /* গোপীনাথপুর জামে মসজিদ — নতুন ডিজাইন: গোধূলির আকাশ, মসজিদের বাতির আলো
    মোবাইল-ফার্স্ট। ক্লাসের নাম আগের মতোই, তাই app.js/cloud.js বদলাতে হয়নি। */
@@ -529,6 +529,28 @@ html[data-theme=light] .qr .ay-tn{color:#0b6b4f}
 #iftarAsk .box{background:#fff;color:#1b2b24;border-radius:18px;padding:20px;max-width:340px;width:100%;font:500 15px 'Anek Bangla',sans-serif;text-align:center;line-height:1.6}
 #iftarAsk .box button{display:block;width:100%;margin-top:10px;padding:12px;border-radius:12px;border:0;font:600 15px 'Anek Bangla',sans-serif;cursor:pointer}
 #iftarAsk .y{background:#0b6a51;color:#fff}#iftarAsk .n{background:#e8efe9;color:#1b2b24}
+
+/* ===== থিম ৩: নূর (নতুন মকআপ) — ডিফল্ট; সবসময় লাইট ===== */
+html[data-mtheme=noor]{--deep:#063d29;--pri:#0b6b45;--green:#0b6b45;--green2:#12935f;--mint:#e4f3ea;--gold:#d9a93c;--gold2:#8a6410;--goldsoft:#fbf0cf;--ink:#12301f;--muted:#5a7266;--line:#d6e6dc;--paper:#eef4f0;--lift:0 18px 40px -20px #063d2988}
+.th-card.noor .th-sw i:nth-child(1){background:#063d29}.th-card.noor .th-sw i:nth-child(2){background:#e4f3ea}.th-card.noor .th-sw i:nth-child(3){background:#d9a93c}
+.nr{padding-bottom:20px}
+.nr-hero{position:relative;overflow:hidden;min-height:250px;padding:calc(env(safe-area-inset-top,0px) + 26px) 18px 100px;text-align:center;color:#fff;background:radial-gradient(ellipse at 50% 100%,#e9b95e66,#0000 60%),linear-gradient(180deg,#063d29,#0b6b45 70%,#2c8a5f);border-radius:0 0 30px 30px}
+.nr-hero h1{margin:6px 0 2px;font:700 26px/1.25 'Tiro Bangla','Anek Bangla',serif;color:#fff}.nr-hero p{margin:0;font-size:13px;color:#d9efe2}
+.nr-moon{display:block;font-size:36px;color:var(--gold)}
+.nr-bell{position:absolute;right:14px;top:calc(env(safe-area-inset-top,0px) + 14px);width:40px;height:40px;border:1px solid #ffffff55;border-radius:50%;background:#ffffff22;color:#fff;font-size:17px;cursor:pointer;z-index:2}
+.nr-bell b{position:absolute;top:-4px;right:-4px;min-width:17px;height:17px;border-radius:9px;background:#e53935;font-size:10px;display:grid;place-items:center}
+.nr-sky{position:absolute;left:0;right:0;bottom:0;width:100%;height:96px}
+.nr-next{position:relative;z-index:2;display:flex;gap:14px;align-items:center;margin:-72px 14px 0;padding:14px;background:#fffffff2;border-radius:24px;box-shadow:var(--lift)}
+.nr-ring{position:relative;width:92px;height:92px;flex:none}.nr-ring svg{width:100%;height:100%;transform:rotate(-90deg)}.nr-ring circle{fill:none;stroke-width:8}.nr-ring .bg{stroke:#dcefe3}.nr-ring .fg{stroke:var(--pri);stroke-linecap:round;stroke-dasharray:264;stroke-dashoffset:70}.nr-ring i{position:absolute;inset:0;display:grid;place-items:center;font-size:34px;font-style:normal}
+.nr-nx small{color:var(--muted);font-size:13px}.nr-nx strong{display:block;font:700 26px/1.15 'Anek Bangla',sans-serif;color:var(--ink)}.nr-nx time{display:block;font:800 28px/1.15 'Manrope','Anek Bangla',sans-serif;color:var(--pri)}.nr-nx span{display:block;margin-top:2px;font-size:12px;color:var(--muted)}
+.nr-prayers{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:14px 14px 0}
+.nr-pr{padding:10px 2px;text-align:center;background:#fff;border:1px solid var(--line);border-radius:16px;font-size:12px;color:var(--ink);cursor:pointer}.nr-pr .pi{display:block;font-size:20px}.nr-pr b{display:block;font-size:12px}.nr-pr .t{font-size:11.5px;font-weight:700;color:var(--muted)}.nr-pr.on{background:var(--pri);border-color:var(--pri);color:#fff}.nr-pr.on .t{color:#fff}
+.nr-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px}
+.nr-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:96px;border:1px solid var(--line);border-radius:20px;background:#fff;color:var(--pri);font-family:inherit;font-weight:600;font-size:13px;line-height:1.3;cursor:pointer;box-shadow:0 8px 18px -14px #063d29}.nr-tile i{font-style:normal;font-size:28px}
+.nr-chips{display:flex;gap:8px;flex-wrap:wrap;margin:0 14px 14px}.nr-chip{padding:8px 13px;border-radius:18px;border:1px solid var(--line);background:#fff;color:var(--ink);font-family:inherit;font-size:13px;cursor:pointer}
+.nr-card{margin:0 14px 12px;padding:14px;border-radius:20px;background:#fff;border:1px solid var(--line);color:var(--ink)}.nr-card h3{margin:0 0 4px;font:600 15px 'Anek Bangla',sans-serif;display:flex;justify-content:space-between}.nr-card h3 a{font-size:12px;color:var(--pri);cursor:pointer}
+.nr-bar{height:8px;background:var(--mint);border-radius:5px;overflow:hidden;margin:8px 0 2px}.nr-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--pri),var(--gold))}
+.nr-don{display:flex;gap:12px;align-items:center}.nr-don .m{flex:1;min-width:0}.nr-gold{border:0;border-radius:14px;padding:10px 12px;background:var(--gold);color:#3a2a00;font-family:inherit;font-weight:700;font-size:13px;line-height:1.3;cursor:pointer}
 </style>
 </head>
 <body>
@@ -575,6 +597,7 @@ window.FIREBASE_CONFIG = {
 window.OWNER_EMAIL = "shironamhinantor@gmail.com";
 window.VAPID_KEY = "BDxO5oMJ3QEQGrMtQoiWExoZR8Fw8g8CO2QW30SEM_5W_t-kb1KkPeCiZl7vLhlFXR_91NnRSp8xFsk6RTV7Vms";
 window.PUSH_API = "https://gopinathpur-push.shironamhinantor.workers.dev";
+window.__pingPush=function(id){try{if(!window.PUSH_API||/YOUR-/.test(window.PUSH_API))return;fetch(window.PUSH_API+'/check',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:String(id)}),keepalive:true}).catch(function(){})}catch(e){}};
 </script>
 <script>
 /* গোপীনাথপুর জামে মসজিদ — সব লজিক এক ফাইলে (app + premium + cloud + fixes + features + extras + হোম/থিম/AI) */
@@ -803,7 +826,7 @@ Promise.all(['app','firestore','auth'].map(n=>import(B+'firebase-'+n+'.js'))).th
  F.onSnapshot(F.collection(fs,'archive'),s=>{archive=s.docs.map(d=>({...d.data(),id:d.id})).sort((a,b)=>b.year-a.year||String(a.title).localeCompare(b.title));render()},()=>{});
  F.onSnapshot(F.collection(fs,'bloodDonors'),s=>{donors=s.docs.map(d=>({...d.data(),id:d.id})).sort((a,b)=>a.group.localeCompare(b.group));render()},()=>{});
  save=function(){if(role==='none')return;
-  COLS.forEach(c=>{const cur=new Map(db[c].map(x=>[String(x.id),x]));cur.forEach((x,id)=>{if(LAST[c].get(id)!==JSON.stringify(x))F.setDoc(F.doc(fs,c,id),x).catch(fail)});LAST[c].forEach((_,id)=>{if(!cur.has(id))F.deleteDoc(F.doc(fs,c,id)).catch(fail)})});
+  COLS.forEach(c=>{const cur=new Map(db[c].map(x=>[String(x.id),x]));cur.forEach((x,id)=>{if(LAST[c].get(id)!==JSON.stringify(x))F.setDoc(F.doc(fs,c,id),x).then(()=>{if(c==='notices')window.__pingPush&&window.__pingPush(id)}).catch(fail)});LAST[c].forEach((_,id)=>{if(!cur.has(id))F.deleteDoc(F.doc(fs,c,id)).catch(fail)})});
   const s={goal:db.settings.goal,bkash:db.settings.bkash||'',nagad:db.settings.nagad||'',bank:db.settings.bank||''};
   if(JSON.stringify(s)!==LS.settings)F.setDoc(F.doc(fs,'settings','main'),s).catch(fail);
   if(JSON.stringify(db.prayer)!==LS.prayer)F.setDoc(F.doc(fs,'prayer','main'),db.prayer).catch(fail)};
@@ -969,7 +992,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-library],[
  else if(b.dataset.library in LINKS){e.stopImmediatePropagation();open('<h2>বাইরের নির্ভরযোগ্য উৎস</h2><p class="muted">এই বিষয়বস্তু বাংলা সহ নির্ভরযোগ্য ওয়েবসাইটে আছে।</p><div class="modal-actions"><a class="btn" target="_blank" rel="noopener" href="'+LINKS[b.dataset.library]+'">ওয়েবসাইট খুলুন ↗</a></div>')}},true);
 /* ---- থিম (লাইট/ডার্ক/অটো), বড় লেখা, ঘড়ি: সাইডবারে ---- */
 const G=k=>{try{return localStorage.getItem(k)}catch(e){return null}},W=(k,v)=>{try{localStorage.setItem(k,v)}catch(e){}};
-const MQ=matchMedia('(prefers-color-scheme: dark)');const getPref=()=>{const t=G('theme');return t==='light'||t==='auto'?t:'dark'};const resolveTheme=()=>{const t=getPref();return t==='auto'?(MQ.matches?'dark':'light'):t};const ap=()=>{const t=getPref(),r=document.documentElement,rt=resolveTheme();r.setAttribute('data-theme',rt);const mc=document.querySelector('meta[name=theme-color]');if(mc)mc.content=rt==='light'?'#0b6b4f':(r.dataset.mtheme==='neon'?'#050a24':'#00170e');document.body.classList.toggle('big',G('bg')==='1');$$('[data-th]').forEach(x=>x.classList.toggle('on',x.dataset.th===t));const bb=$('#bgBtn');if(bb)bb.classList.toggle('on',G('bg')==='1')};window._applyMode=ap;window._getPref=getPref;window._resolveTheme=resolveTheme;const onMQ=()=>{if(getPref()==='auto'){ap();render()}};MQ.addEventListener?MQ.addEventListener('change',onMQ):MQ.addListener&&MQ.addListener(onMQ);
+const MQ=matchMedia('(prefers-color-scheme: dark)');const getPref=()=>{const t=G('theme');return t==='light'||t==='auto'?t:'dark'};const resolveTheme=()=>{const t=getPref();if(document.documentElement.dataset.mtheme==='noor')return 'light';return t==='auto'?(MQ.matches?'dark':'light'):t};const ap=()=>{const t=getPref(),r=document.documentElement,rt=resolveTheme();r.setAttribute('data-theme',rt);const mc=document.querySelector('meta[name=theme-color]');if(mc)mc.content=rt==='light'?'#0b6b4f':(r.dataset.mtheme==='neon'?'#050a24':'#00170e');document.body.classList.toggle('big',G('bg')==='1');$$('[data-th]').forEach(x=>x.classList.toggle('on',x.dataset.th===t));const bb=$('#bgBtn');if(bb)bb.classList.toggle('on',G('bg')==='1')};window._applyMode=ap;window._getPref=getPref;window._resolveTheme=resolveTheme;const onMQ=()=>{if(getPref()==='auto'){ap();render()}};MQ.addEventListener?MQ.addEventListener('change',onMQ):MQ.addListener&&MQ.addListener(onMQ);
 $('.sidebar-foot').insertAdjacentHTML('beforebegin','<div class="prefs"><b>দেখার ধরন</b><div class="seg"><button data-th="light">☀ লাইট</button><button data-th="dark">☾ ডার্ক</button><button data-th="auto">অটো</button></div><div class="seg"><button id="bgBtn">A+ বড় লেখা</button><span id="clkSlot" style="flex:1;display:flex"></span></div></div>');
 const ck=$('#clockBtn');if(ck)$('#clkSlot').appendChild(ck);
 $$('[data-th]').forEach(x=>x.onclick=()=>{W('theme',x.dataset.th);ap();render()});$('#bgBtn').onclick=()=>{W('bg',G('bg')==='1'?'0':'1');ap()};ap();
@@ -1056,9 +1079,21 @@ const homeGreen=function(){
  <div class="m-chips">${tchips}${chips.map(c=>`<button class="m-chip" data-go="${c[0]}">${c[1]}</button>`).join('')}</div>
  <section class="m-glass m-notice"><div class="ic">📢</div><div style="flex:1;min-width:0"><h3>সর্বশেষ নোটিশ <a data-go="notices">সব দেখুন ›</a></h3><p>${n?esc(n.title):'এখনো কোনো ঘোষণা নেই'}</p><small>${n?'📅 '+esc(n.date):''}</small></div></section>
  <section class="m-glass m-donate"><div class="k">🕋</div><div class="m"><b>মসজিদ উন্নয়নে সহযোগিতা করুন</b><div class="c">জমা: ${money(don)} / ${money(goal)}</div><div class="m-bar"><i style="width:${pct}%"></i></div><span class="m-pc">${Number(pct).toLocaleString('bn-BD')}%</span></div><button class="m-gold" data-go="donations">❤ এখনই<br>দান করুন</button></section></div>`};
+const homeNoor=function(){
+ const don=sum(db.donations,'amount'),goal=db.settings.goal||1,pct=Math.min(100,Math.round(don/goal*100)),n=db.notices.slice().reverse()[0],fri=new Date().getDay()===5;
+ const tiles=[['prayer','🕌','নামাজের<br>সময়'],['library','📖','কুরআন ও<br>শিক্ষা'],['donations','🤲','দান ও<br>সদকা'],['notices','📢','ঘোষণা ও<br>নোটিশ'],['events','📅','ইভেন্ট ও<br>মাহফিল'],['committee','ℹ️','মসজিদ<br>পরিচিতি']];
+ const chips=[['accounts','📈 আয়-ব্যয় হিসাব'],['community','👥 কমিউনিটি'],['gallery','🖼️ ছবি'],['archive','🗂 পুরোনো হিসাব'],['blood','🩸 রক্তদাতা']];
+ const sky='<svg class="nr-sky" viewBox="0 0 400 100" preserveAspectRatio="xMidYMax slice"><g fill="#063d29" opacity=".92"><rect y="88" width="400" height="12"/><path d="M130 88V68Q130 36 200 36Q270 36 270 68V88z"/><rect x="199" y="20" width="2" height="16"/><path d="M85 88V78Q85 64 108 64Q130 64 130 78V88zM270 88V78Q270 64 292 64Q315 64 315 78V88z"/><rect x="62" y="38" width="12" height="50"/><polygon points="60,38 68,18 76,38"/><rect x="326" y="38" width="12" height="50"/><polygon points="324,38 332,18 340,38"/></g><circle cx="200" cy="15" r="5" fill="#f3d27a"/></svg>';
+ return `<div class="nr"><header class="nr-hero">${sky}<button class="nr-bell" data-go="notices" aria-label="নোটিশ">🔔<b>${Number(db.notices.length).toLocaleString('bn-BD')}</b></button><span class="nr-moon">☾</span><h1>গোপীনাথপুর জামে মসজিদ</h1><p>শান্তি · ইবাদত · সেবা</p></header>
+ <section class="nr-next"><div class="nr-ring"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="42"/><circle class="fg" cx="50" cy="50" r="42"/></svg><i>🕌</i></div><div class="nr-nx"><small>পরবর্তী নামাজ</small><strong id="mNm">—</strong><time id="mCd">০০:০০:০০</time><span>${esc(new Intl.DateTimeFormat('bn-BD',{weekday:'short',day:'numeric',month:'short',year:'numeric'}).format(new Date()))} · ${esc(hj())}</span></div></section>
+ <section class="nr-prayers">${NM.map((k,i)=>`<div class="m-pr nr-pr" data-k="${k}" data-go="prayer"><span class="pi">${IC[i]}</span><b>${k==='যোহর'&&fri?'জুমা':k}</b><span class="t">${esc(tm(k))}</span></div>`).join('')}</section>
+ <section class="nr-tiles">${tiles.map(t=>`<button class="nr-tile" data-go="${t[0]}"><i>${t[1]}</i>${t[2]}</button>`).join('')}</section>
+ <div class="nr-chips"><button class="nr-chip" data-theme>🎨 থিম</button><button class="nr-chip" data-ai>✨ AI সহকারী</button>${chips.map(c=>`<button class="nr-chip" data-go="${c[0]}">${c[1]}</button>`).join('')}</div>
+ <section class="nr-card"><h3>সর্বশেষ নোটিশ <a data-go="notices">সব দেখুন ›</a></h3><p style="margin:0">${n?esc(n.title):'এখনো কোনো ঘোষণা নেই'}</p><small class="muted">${n?'📅 '+esc(n.date):''}</small></section>
+ <section class="nr-card nr-don"><div class="m"><b>মসজিদ উন্নয়নে সহযোগিতা করুন</b><div class="muted" style="font-size:13px">জমা: ${money(don)} / ${money(goal)} · ${Number(pct).toLocaleString('bn-BD')}%</div><div class="nr-bar"><i style="width:${pct}%"></i></div></div><button class="nr-gold" data-go="donations">❤ এখনই<br>দান করুন</button></section></div>`};
 /* ===== থিম বদল (সবুজ / নিয়ন) ===== */
-const THEMES={green:['🟢 সবুজ-সোনালি','আগের ডিজাইন'],neon:['🔵 নিয়ন নীল','রাতের আকাশ, নীল-বেগুনি-সবুজ আলো']};
-const curTheme=()=>document.documentElement.dataset.mtheme==='neon'?'neon':'green';
+const THEMES={noor:['🌿 নূর (নতুন ডিজাইন)','হালকা সবুজ-সাদা, নামাজের ঘড়ি'],green:['🟢 সবুজ-সোনালি','আগের ডিজাইন'],neon:['🔵 নিয়ন নীল','রাতের আকাশ, নীল-বেগুনি-সবুজ আলো']};
+const curTheme=()=>{const m=document.documentElement.dataset.mtheme;return m==='neon'?'neon':m==='green'?'green':'noor'};
 const isDark=()=>document.documentElement.getAttribute('data-theme')!=='light';
 const homeLight=home;
 function setTheme(t){try{localStorage.gm_mtheme=t}catch(e){}document.documentElement.dataset.mtheme=t;
@@ -1163,8 +1198,8 @@ document.addEventListener('click',e=>{
  const _tb=e.target.closest('[data-theme]');if(_tb&&_tb!==document.documentElement){e.preventDefault();themeSheet();return}
  const _mb=e.target.closest('[data-mode]');if(_mb){setMode(_mb.dataset.mode);themeSheet();return}
  if(e.target.closest('[data-ai]')){e.preventDefault();aiSheet();return}
- const k=e.target.closest('[data-pick]');if(k){try{if(!isDark())localStorage.setItem('theme','dark')}catch(_){}setTheme(k.dataset.pick);typeof closeModal==='function'?closeModal():$('#modalBackdrop').classList.remove('show');toast(k.dataset.pick==='neon'?'নিয়ন থিম চালু':'সবুজ-সোনালি থিম চালু')}});
-home=function(){return !isDark()?homeLight():(curTheme()==='neon'?homeNeon():homeGreen())};
+ const k=e.target.closest('[data-pick]');if(k){try{if(k.dataset.pick!=='noor'&&!isDark())localStorage.setItem('theme','dark')}catch(_){}setTheme(k.dataset.pick);typeof closeModal==='function'?closeModal():$('#modalBackdrop').classList.remove('show');toast(({noor:'নূর থিম চালু',neon:'নিয়ন থিম চালু'})[k.dataset.pick]||'সবুজ-সোনালি থিম চালু')}});
+home=function(){return curTheme()==='noor'?homeNoor():(!isDark()?homeLight():(curTheme()==='neon'?homeNeon():homeGreen()))};
 {const sf=document.querySelector('.sidebar-foot');if(sf)sf.insertAdjacentHTML('beforebegin','<button class="nav-item" data-theme>🎨 <span>থিম পরিবর্তন</span></button><button class="nav-item" data-ai>✨ <span>AI সহকারী</span></button>')}
 function tick(){const el=document.getElementById('mCd');if(!el)return;const x=nextP();if(!x)return;
  let s=Math.max(0,Math.floor((x.d-new Date())/1e3));el.textContent=b2(s/3600|0)+':'+b2(s%3600/60|0)+':'+b2(s%60);document.getElementById('mNm').textContent=x.n;
