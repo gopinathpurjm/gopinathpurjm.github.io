@@ -425,6 +425,12 @@ html[data-th=gp] .hv .ftx,html[data-th=gpd] .hv .ftx{font-size:38px!important}
 html[data-th=gp] .hv .gtt,html[data-th=gpd] .hv .gtt{font-size:16px!important}
 html[data-th=gp] .hv .gptag,html[data-th=gpd] .hv .gptag{font-size:17px!important}
 }
+/* পরবর্তী নামাজ কার্ড: স্ক্যান লাইনের বদলে আড়াআড়ি আলোর ঝলক (AI কার্ডে স্ক্যান লাইনই থাকবে) */
+.hp-next.scn::after{display:block!important;content:"";position:absolute;top:0!important;bottom:auto!important;left:0!important;right:auto!important;width:38%!important;height:100%!important;background:linear-gradient(100deg,transparent,rgba(255,255,255,.16),transparent)!important;transform:translateX(-120%) skewX(-18deg);animation:fxShine2 6s ease-in-out 1.5s infinite!important;will-change:transform;pointer-events:none}
+/* AI সহকারী কার্ড: স্ক্যান লাইনের বদলে কার্ডের কিনারা ঘিরে ঘুরন্ত আলো (অ্যাপে আগে ছিল না) */
+@property --ang{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes orb{to{--ang:360deg}}
+.hp-ai.scn::after{display:block!important;content:"";position:absolute;inset:0!important;top:0!important;bottom:0!important;left:0!important;right:0!important;width:auto!important;height:auto!important;transform:none!important;border-radius:inherit;padding:2px;background:conic-gradient(from var(--ang),transparent 0 68%,var(--a) 90%,#e2b43c 98%,transparent 100%)!important;-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:orb 3.6s linear infinite!important;pointer-events:none}
 </style></head><body><i class="o o1"></i><i class="o o2"></i><i class="o o3"></i><main id="app"></main><nav id="nav" class="g"></nav><div id="ov"></div><div id="tt"></div>
 <script>
 const $=s=>document.querySelector(s),bn=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]),tk=n=>'৳ '+bn(Math.round(n).toLocaleString('en-IN')),
