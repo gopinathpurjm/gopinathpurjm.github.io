@@ -8,7 +8,7 @@ try{self.window=self;self.FIREBASE_CONFIG={
   appId: "1:353240144381:web:b0bd0cd84eb08e739a6194"
 };importScripts('https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js','https://www.gstatic.com/firebasejs/10.14.1/firebase-messaging-compat.js');
 if(self.FIREBASE_CONFIG&&!/^YOUR_/.test(self.FIREBASE_CONFIG.apiKey)){firebase.initializeApp(self.FIREBASE_CONFIG);firebase.messaging()}}catch(e){}
-const CACHE='gopinathpur-masjid-v35';
+const CACHE='gopinathpur-masjid-v36';
 const ASSETS=['./','./index.html','./manifest.json','./icon.svg','./icon-192.png','./icon-512.png','./icon-maskable-192.png','./icon-maskable-512.png','./apple-touch-icon.png'];
 // একটা ফাইল না থাকলেও ইনস্টল যেন ব্যর্থ না হয়
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>Promise.allSettled(ASSETS.map(a=>c.add(a)))))});
@@ -16,5 +16,5 @@ self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.al
 self.addEventListener('fetch',e=>{
   const u=new URL(e.request.url);
   if(e.request.method!=='GET'||u.origin!==location.origin||u.pathname.includes('/archive/'))return; // Firebase/Google অনুরোধ কখনো ক্যাশ হবে না
-  e.respondWith(fetch(e.request,{cache:'reload'}).then(r=>{if(r.ok){const c=r.clone();caches.open(CACHE).then(x=>x.put(e.request,c))}return r}).catch(()=>caches.match(e.request,{ignoreSearch:true}).then(m=>m||caches.match('./index.html'))));
+  e.respondWith(fetch(e.request,{cache:'reload'}).then(r=>{if(r.ok){const c=r.clone();caches.open(CACHE).then(x=>x.put(e.request,c))}return r}).catch(()=>caches.match(e.request,{ignoreSearch:true}).then(m=>m||(e.request.mode==='navigate'?caches.match('./index.html'):new Response('',{status:504})))));
 });
