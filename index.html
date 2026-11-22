@@ -320,23 +320,6 @@ html[data-th=gp] .gptag{display:block;margin-top:4px;font-size:13px;font-weight:
 .th.on{border-color:var(--a);box-shadow:0 0 14px rgba(var(--ar),.45)}
 .th em{position:absolute;top:6px;right:8px;font-style:normal;background:var(--a);color:var(--bt);border-radius:50%;width:22px;height:22px;display:grid;place-items:center;font-size:13px}
 
-/* ===== স্প্ল্যাশ পেজ (অ্যাপ খুললে প্রথমে নাম লেখা পেজ) ===== */
-#sp{position:fixed;inset:0;z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(120% 75% at 50% 32%,#17893f 0,#0b5f29 48%,#052e18 100%);color:#fff;text-align:center;overflow:hidden;transition:opacity .55s ease,visibility .55s;animation:spOut .5s ease 4.5s forwards}
-#sp.x{opacity:0;visibility:hidden;pointer-events:none}
-@keyframes spOut{to{opacity:0;visibility:hidden;pointer-events:none}}
-#sp .spm{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:10px;margin-top:-40px;animation:spUp .9s cubic-bezier(.2,.8,.2,1) both}
-#sp .spa{width:min(54vw,230px,34vh);height:auto;filter:drop-shadow(0 10px 26px rgba(0,0,0,.4))}
-#sp h1{margin:6px 0 0;font-size:clamp(30px,8.5vw,44px);line-height:1.25;font-weight:700;text-shadow:0 3px 14px rgba(0,0,0,.45)}
-#sp p{margin:0;color:#f4d58d;font-size:clamp(15px,4.4vw,19px);font-weight:600}
-#sp .spl{position:absolute;top:0;width:34px;height:auto;z-index:2;transform-origin:50% 0;animation:spSw 3.2s ease-in-out infinite alternate}
-#sp .l1{left:7%}#sp .l2{right:7%;animation-delay:-1.6s}
-#sp .spd{position:absolute;bottom:calc(env(safe-area-inset-bottom,0px) + 24px);display:flex;gap:7px;z-index:3}
-#sp .spd i{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.4)}#sp .spd i.on{background:#e2b43c;animation:spDot 1.1s ease-in-out infinite alternate}
-#sp .spf{position:absolute;left:0;right:0;bottom:0;height:30vh;max-height:260px;z-index:1}#sp .spf svg{width:100%;height:100%;display:block}
-@keyframes spUp{from{opacity:0;transform:translateY(26px) scale(.94)}to{opacity:1;transform:none}}
-@keyframes spSw{from{transform:rotate(-4deg)}to{transform:rotate(4deg)}}
-@keyframes spDot{to{transform:scale(1.5)}}
-
 /* ===== লেখা ও লোগো স্পষ্ট (লাইট থিম) ===== */
 html[data-th=gp] label{color:#2c4a38}html[data-th=gp] label.ck{color:#15301f}
 html[data-th=gp] .ct span{color:#15301f;font-weight:600}html[data-th=gp] .ct span svg,html[data-th=gp] .ct span b{color:#0c6b2e}
@@ -400,30 +383,39 @@ html[data-th=gpd] .hv{text-shadow:0 2px 12px rgba(0,0,0,.7)}
 html[data-th=gpd] .hv .gtt{color:#cfe9d8;font-weight:600;opacity:1!important}
 html[data-th=gpd] .hv .ftx{font-size:27px!important;filter:drop-shadow(0 2px 8px rgba(0,0,0,.6))}
 html[data-th=gpd] .gptag{color:#a8f0c0}
-@media(min-width:900px){
-html[data-th=gpd] .hero{aspect-ratio:auto;height:clamp(420px,36vw,560px);background:linear-gradient(180deg,#07142e 0,#12305a 36%,#1d4a6e 60%,#2a5d6a 77%,#3a6f66 90%)}
-html[data-th=gpd] .hero::after{display:block;content:"";position:absolute;left:0;right:0;bottom:0;height:11%;z-index:0;background:linear-gradient(180deg,#0f6a30,#06301a);border-top:3px solid #e2b43c}
-html[data-th=gpd] .gpsc{inset:0 auto 0 50%;width:auto;height:100%;aspect-ratio:400/440;transform:translateX(-50%);z-index:1}
-html[data-th=gpd] .hv{top:72px}html[data-th=gpd] .hv .ftx{font-size:36px!important}html[data-th=gpd] .hero .bl{z-index:4}
-}
 .hero .bl.dm{right:118px}
 
 /* ===== পেজের নিচে মসজিদের ছবি ===== */
 .msf{grid-column:1/-1;position:relative;overflow:hidden;border-radius:24px;margin-top:10px;min-height:150px;padding:56px 18px 20px;display:flex;align-items:flex-end;justify-content:center;text-align:center;background:linear-gradient(180deg,rgba(23,136,63,0) 0,rgba(15,122,54,.75) 45%,#0a5a26 100%);color:#fff}
 .msf svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:100%;display:block}
 .msf p{position:relative;z-index:1;margin:0;font-weight:600;font-size:15px;line-height:1.5;text-shadow:0 1px 8px rgba(0,0,0,.45)}
-/* ===== পিসি ভার্সনে হেডার বড় ও পূর্ণ দেখানো (হালকা ও ডার্ক দুই মোডেই) ===== */
+
+/* ===== ছোট ও সুন্দর হেডার (মোবাইল ও পিসি দুই জায়গায়) ===== */
+.hero{aspect-ratio:auto;height:210px}
+.hero .bl{width:40px;height:40px;top:12px}
+html[data-th=gp] .hero,html[data-th=gpd] .hero{aspect-ratio:auto;height:210px}
+html[data-th=gp] .hero{background:linear-gradient(180deg,#5fa6e6 0,#a8d2f4 36%,#e9e6f0 60%,#fbd7b4 77%,#fff0dc 90%)}
+html[data-th=gpd] .hero{background:linear-gradient(180deg,#07142e 0,#12305a 36%,#1d4a6e 60%,#2a5d6a 77%,#3a6f66 90%)}
+html[data-th=gp] .hero::after,html[data-th=gpd] .hero::after{display:block;content:"";position:absolute;left:0;right:0;top:auto;bottom:0;height:11%;z-index:0;border-top:3px solid #e2b43c}
+html[data-th=gp] .hero::after{background:linear-gradient(180deg,#17883f,#0a4f22)}
+html[data-th=gpd] .hero::after{background:linear-gradient(180deg,#0f6a30,#06301a)}
+html[data-th=gp] .gpsc,html[data-th=gpd] .gpsc{inset:0 0 0 auto;width:auto;height:100%;aspect-ratio:400/440;transform:none;z-index:1}
+html[data-th=gp] .hv,html[data-th=gpd] .hv{left:16px;right:auto;top:50%;bottom:auto;transform:translateY(-50%);text-align:left;max-width:58%;z-index:3}
+html[data-th=gp] .hv .ftx,html[data-th=gpd] .hv .ftx{font-size:19px!important;line-height:1.3!important}
+html[data-th=gp] .hv .gtt,html[data-th=gpd] .hv .gtt{font-size:12px!important}
+html[data-th=gp] .hv .gptag,html[data-th=gpd] .hv .gptag{font-size:12px!important;margin-top:6px}
 @media(min-width:900px){
-.hero{height:clamp(400px,36vw,560px)}
-.hv>div:last-child{font-size:34px!important}
-html[data-th=gp] .hero{aspect-ratio:auto;height:clamp(420px,36vw,560px);background:linear-gradient(180deg,#5fa6e6 0,#a8d2f4 36%,#e9e6f0 60%,#fbd7b4 77%,#fff0dc 90%)}
-html[data-th=gp] .hero::after{display:block;content:"";position:absolute;left:0;right:0;bottom:0;height:11%;z-index:0;background:linear-gradient(180deg,#17883f,#0a4f22);border-top:3px solid #e2b43c}
-html[data-th=gp] .gpsc{inset:0 auto 0 50%;width:auto;height:100%;aspect-ratio:400/440;transform:translateX(-50%);z-index:1}
-html[data-th=gp] .hv{top:72px}
-html[data-th=gp] .hv .ftx{font-size:36px!important}
-html[data-th=gp] .hero .bl{z-index:4}
+.hero{height:clamp(250px,22vw,320px)}
+.hero .bl{width:44px;height:44px;top:16px}
+html[data-th=gp] .hero,html[data-th=gpd] .hero{height:clamp(250px,22vw,320px)}
+html[data-th=gp] .gpsc,html[data-th=gpd] .gpsc{right:6%}
+html[data-th=gp] .gpsc,html[data-th=gpd] .gpsc{-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+html[data-th=gp] .hv,html[data-th=gpd] .hv{left:36px;max-width:50%}
+html[data-th=gp] .hv .ftx,html[data-th=gpd] .hv .ftx{font-size:38px!important}
+html[data-th=gp] .hv .gtt,html[data-th=gpd] .hv .gtt{font-size:16px!important}
+html[data-th=gp] .hv .gptag,html[data-th=gpd] .hv .gptag{font-size:17px!important}
 }
-</style></head><body><div id="sp"><svg class="spl l1" viewBox="0 0 40 80" aria-hidden="true"><path d="M20 0v14" stroke="#e2b43c" stroke-width="2" fill="none"/><path d="M12 16h16l3 6H9zM10 22h20l-2 30c-1 6-5 9-8 9s-7-3-8-9z" fill="#e2b43c"/><path d="M13 26h14l-1.5 24c-.5 4-3 6-5.500 6s-5-2-5.500-6z" fill="#fff3b0"/><path d="M14 62h12l-2 8h-8z" fill="#e2b43c"/></svg><svg class="spl l2" viewBox="0 0 40 80" aria-hidden="true"><path d="M20 0v14" stroke="#e2b43c" stroke-width="2" fill="none"/><path d="M12 16h16l3 6H9zM10 22h20l-2 30c-1 6-5 9-8 9s-7-3-8-9z" fill="#e2b43c"/><path d="M13 26h14l-1.5 24c-.5 4-3 6-5.500 6s-5-2-5.500-6z" fill="#fff3b0"/><path d="M14 62h12l-2 8h-8z" fill="#e2b43c"/></svg><div class="spm"><svg class="spa" viewBox="0 0 200 190" aria-hidden="true"><defs><linearGradient id="spg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f9a4c"/><stop offset="1" stop-color="#0a5a26"/></linearGradient></defs><path d="M100 8C126 38 178 60 178 112v60Q100 150 22 172v-60C22 60 74 38 100 8z" fill="url(#spg)" stroke="#e2b43c" stroke-width="4" stroke-linejoin="round"/><path d="M96 34a15 15 0 1 0 13 23 11.500 11.500 0 1 1-13-23z" fill="#e2b43c"/><g fill="#fff"><path d="M72 124a28 28 0 0 1 56 0z"/><rect x="66" y="124" width="68" height="30"/><path d="M48 136a11 11 0 0 1 22 0z"/><path d="M130 136a11 11 0 0 1 22 0z"/><rect x="40" y="136" width="14" height="18"/><rect x="146" y="136" width="14" height="18"/><rect x="34" y="96" width="9" height="58"/><path d="M32 96a6.500 6.500 0 0 1 13 0z"/><rect x="157" y="96" width="9" height="58"/><path d="M155 96a6.500 6.500 0 0 1 13 0z"/></g><path d="M92 154v-14a8 8 0 0 1 16 0v14z" fill="#0a5a26"/><path d="M100 96V84" stroke="#e2b43c" stroke-width="2.500"/><path d="M22 172Q100 150 178 172" fill="none" stroke="#e2b43c" stroke-width="5"/></svg><h1>গোপীনাথপুর<br>জামে মসজিদ</h1><p>ইবাদতের ঘর, শান্তির ঠিকানা</p></div><div class="spd"><i></i><i class="on"></i><i></i></div><div class="spf"><svg viewBox="0 0 400 120" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><g fill="#4fb36f" opacity=".5"><path d="M168 74a32 32 0 0 1 64 0z"/><rect x="158" y="74" width="84" height="40"/><path d="M118 82a17 17 0 0 1 34 0z"/><path d="M248 82a17 17 0 0 1 34 0z"/><rect x="92" y="44" width="8" height="70"/><path d="M90 44a6 6 0 0 1 12 0z"/><rect x="300" y="44" width="8" height="70"/><path d="M298 44a6 6 0 0 1 12 0z"/><rect x="52" y="64" width="6" height="50"/><path d="M50 64a5 5 0 0 1 10 0z"/><rect x="342" y="64" width="6" height="50"/><path d="M340 64a5 5 0 0 1 10 0z"/></g><path d="M200 24a6 6 0 1 0 5 9 4.6 4.6 0 1 1-5-9z" fill="#e2b43c"/><g fill="#1b7a3d"><ellipse cx="22" cy="112" rx="46" ry="22"/><ellipse cx="378" cy="112" rx="46" ry="22"/><ellipse cx="86" cy="118" rx="40" ry="14"/><ellipse cx="314" cy="118" rx="40" ry="14"/><rect x="0" y="108" width="400" height="12"/></g></svg></div></div><i class="o o1"></i><i class="o o2"></i><i class="o o3"></i><main id="app"></main><nav id="nav" class="g"></nav><div id="ov"></div><div id="tt"></div>
+</style></head><body><i class="o o1"></i><i class="o o2"></i><i class="o o3"></i><main id="app"></main><nav id="nav" class="g"></nav><div id="ov"></div><div id="tt"></div>
 <script>
 const $=s=>document.querySelector(s),bn=n=>String(n).replace(/\d/g,d=>'০১২৩৪৫৬৭৮৯'[d]),tk=n=>'৳ '+bn(Math.round(n).toLocaleString('en-IN')),
 esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])),
@@ -442,8 +434,8 @@ const F={t:['t','শিরোনাম'],b:['b','বিবরণ','area'],d:['d'
 const M={notice:['সকল ঘোষণা','mega',[F.t,F.b]],event:['ইভেন্ট ও মাহফিল','cal',[F.t,F.d,['tm','সময়'],['pl','স্থান'],['note','বিবরণ']]],blood:['রক্তদাতা','drop',[F.n,['g','গ্রুপ'],F.p,['ar','এলাকা']],[F.n,['g','রক্তের গ্রুপ','sel',['A+','A-','B+','B-','O+','O-','AB+','AB-']],['p','মোবাইল (01XXXXXXXXX)','tel'],['ar','এলাকা'],['ok','সম্মতি','chk',[['1','আমি নিজের ইচ্ছায় নাম ও মোবাইল নম্বর সবার জন্য প্রকাশ করতে সম্মত']]]]],emerg:['জরুরি যোগাযোগ','phone',[F.n,F.p]],help:['অসহায়দের সহায়তা','life',[F.n,F.b]],janaza:['জানাজা ঘোষণা','cand',[F.t,['tm','সময়'],F.b]],member:['পরিচালনা কমিটি','users',[F.n,['r','পদবি'],F.p]],madrasa:['মাদ্রাসা / মক্তব','cap',[F.n,['c','শ্রেণি'],F.a,['p','অভিভাবকের মোবাইল','tel']]],minute:['সভার সিদ্ধান্ত','doc',[F.d,F.b]],asset:['সম্পত্তি ও সরঞ্জাম','box',[F.n,['q','সংখ্যা']]],chanda:['মাসিক চাঁদা','card',[F.n,['m','মাস'],F.a]],budget:['বাজেট ও ফান্ড','wl',[['h','খাত'],['bg','বাজেট','number'],['sp','খরচ','number']]],jumma:['জুমা কালেকশন','cn',[F.d,F.a]],old:['পুরোনো বছরের হিসাব','book',[['y','বছর'],F.b,F.a]],dua:['দৈনন্দিন দোয়া','dua',[F.t,F.b]],hadis:['হাদিস','hd',[F.t,F.b]],namaz:['নামাজ শিক্ষা','mosq',[F.t,F.b]],essay:['ইসলামিক প্রবন্ধ','pen',[F.t,F.b]]};
 const CATS=['সাধারণ দান','জুমার দান','যাকাত','সদকা','নির্মাণ ফান্ড','মাহফিল ফান্ড','মাসিক চাঁদা','বিদ্যুৎ বিল','পানির বিল','ইমাম বেতন','মুয়াজ্জিন বেতন','খাদেম বেতন','পরিষ্কার-পরিচ্ছন্নতা','নির্মাণকাজ','মেরামত','মাইক ও সাউন্ড','মাহফিল ব্যয়','অন্যান্য'];
 const FORMS={acc:[['k','ধরন','sel',['আয়','ব্যয়']],['h','খাত','sel',CATS],['nm','দাতা / প্রাপক (ঐচ্ছিক)'],F.a,F.d,['note','নোট']],don:[['n','দাতার নাম'],['h','খাত','sel',CATS],F.a,F.d],archive:[['y','সাল','number'],['c','খাত','sel',CATS],['t','পাতার নাম / বিবরণ (যেমন: জুমার দান, জানুয়ারি–মার্চ)'],['path','ফাইলের পথ (archive/ এর পরের অংশ, যেমন 2024/jumar.pdf)']]},NEWEST=['notice','janaza','minute','jumma'];
-const SP={iftar:['ইফতার ফান্ড','moon'],archive:['পুরোনো খাতার আর্কাইভ','arch'],gallery:['ছবি ও ভিডিও','img'],quran:['কুরআন মাজিদ','qr'],tasbih:['ডিজিটাল তাসবিহ','tb'],qibla:['কিবলা কম্পাস','kb'],sehri:['সেহরি ও ইফতার','mn'],prayer:['নামাজের সময়','clock'],ai:['AI সহকারী','ai'],acc:['আয়-ব্যয়ের খাতা','led'],don:['অনুদান ও লক্ষ্যমাত্রা','heart'],report:['মাসিক ও বছরের রিপোর্ট','pie'],log:['পরিবর্তনের লগ ও ব্যাকআপ','hist'],admin:['অ্যাডমিন (গুগল সাইন ইন)','lock']};
-const GR=[['ইবাদত ও শিক্ষা',['quran','hadis','dua','namaz','tasbih','qibla','sehri','essay','ai']],['হিসাব ও ফান্ড',['acc','chanda','don','budget','jumma','report','old','archive']],['কমিউনিটি',['notice','event','gallery','iftar','blood','emerg','help','janaza']],['ব্যবস্থাপনা',['member','madrasa','minute','asset','log','admin']]];
+const SP={iftar:['ইফতার ফান্ড','moon'],archive:['পুরোনো খাতার আর্কাইভ','arch'],gallery:['ছবি ও ভিডিও','img'],quran:['কুরআন মাজিদ','qr'],tasbih:['ডিজিটাল তাসবিহ','tb'],qibla:['কিবলা কম্পাস','kb'],sehri:['সেহরি ও ইফতার','mn'],prayer:['নামাজের সময়','clock'],ai:['AI সহকারী','ai'],acc:['আয়-ব্যয়ের খাতা','led'],don:['অনুদান ও লক্ষ্যমাত্রা','heart'],report:['মাসিক ও বছরের রিপোর্ট','pie'],log:['পরিবর্তনের লগ ও ব্যাকআপ','hist'],admin:['অ্যাডমিন (গুগল সাইন ইন)','lock'],theme:['থিম','star']};
+const GR=[['ইবাদত ও শিক্ষা',['quran','hadis','dua','namaz','tasbih','qibla','sehri','essay','ai']],['হিসাব ও ফান্ড',['acc','chanda','don','budget','jumma','report','old','archive']],['কমিউনিটি',['notice','event','gallery','iftar','blood','emerg','help','janaza']],['ব্যবস্থাপনা',['member','madrasa','minute','asset','log','admin','theme']]];
 const ttl=k=>(M[k]||SP[k])[0],icn=k=>(M[k]||SP[k])[1];
 const today=()=>new Date(Date.now()-new Date().getTimezoneOffset()*6e4).toISOString().slice(0,10);
 function tt(m){const e=$('#tt');e.textContent=m;e.className='s';clearTimeout(tt.h);tt.h=setTimeout(()=>e.className='',3200)}
@@ -483,17 +475,20 @@ ${L.length?`<div class="m">সর্বশেষ ${tab=='in'?'আয়':'ব্
 <div class="c g hp-ann">${hd('mega','সর্বশেষ ঘোষণা')}${n?`<b>${esc(n.t)}</b><div class="m">${esc(n.b)}</div>`:'<div class="m">নতুন কোনো ঘোষণা নেই</div>'}${ev?`<div class="li"><div><b>${esc(ev.t)}</b><div class="m">${esc(ev.d)} ${esc(ev.pl||'')}</div></div></div>`:''}<button class="ghost" data-a="go:m:notice">সব ঘোষণা</button></div>
 <div class="c g hp-quick dko">${hd('grid','দ্রুত সেবা')}<div class="tg">${['quran','hadis','dua','tasbih','qibla','sehri','blood','emerg'].map(k=>`<button class="tile big" data-a="${k=='hadis'?'site:h':k=='quran'?'site:q':'go:'+(M[k]?'m:':'')+k}"><span class="ib">${ic(icn(k),28)}</span><span>${ttl(k)}</span></button>`).join('')}</div></div>
 <div class="c g hp-ev dko">${hd('cal','আসন্ন ইভেন্ট')}${evl.length?evl.slice(0,3).map(e=>`<div class="li"><div><b>${esc(e.t)}</b><div class="m">${esc(e.d||'')} ${esc(e.tm||'')} ${esc(e.pl||'')}</div></div></div>`).join(''):'<div class="m">আসন্ন কোনো ইভেন্ট নেই</div>'}${db.emerg.length?'<div class="m" style="margin-top:4px">জরুরি যোগাযোগ</div>'+db.emerg.slice(0,3).map(x=>`<div class="row"><span>${esc(x.n)}</span><a href="tel:${esc(x.p)}" style="color:var(--a)">${esc(x.p)}</a></div>`).join(''):''}<button class="ghost" data-a="go:m:event">সব ইভেন্ট</button></div>`}
-const grp=(g,bg)=>`<div class="c g"><div class="gold" style="font-size:14px;font-weight:700">${g[0]}</div><div class="tg">${g[1].filter(k=>k!='log'||isA()).map(k=>`<button class="tile ${bg?'big':''}" data-a="${k=='hadis'?'site:h':k=='quran'?'site:q':k=='iftar'?'site:i':'go:'+(M[k]?'m:':'')+k}">${bg?`<span class="ib">${ic(icn(k),28)}</span>`:ic(icn(k),20)}<span>${ttl(k)}</span></button>`).join('')}</div></div>`;
+const grp=(g,bg)=>`<div class="c g"><div class="gold" style="font-size:14px;font-weight:700">${g[0]}</div><div class="tg">${g[1].filter(k=>k!='log'||isA()).map(k=>`<button class="tile ${bg?'big':''}" data-a="${k=='hadis'?'site:h':k=='quran'?'site:q':k=='iftar'?'site:i':k=='theme'?'themes':'go:'+(M[k]?'m:':'')+k}">${bg?`<span class="ib">${ic(icn(k),28)}</span>`:ic(icn(k),20)}<span>${ttl(k)}</span></button>`).join('')}</div></div>`;
 let thScope='me';
+function openTheme(){ov(`<div class="g box">${themeCard()}<button class="ghost" data-a="x">বন্ধ</button></div>`)}
+const rth=()=>{if($('#ov .thg'))openTheme()};
+
 function themeCard(){const all=thScope=='all'&&can('settings'),cur=all?gTh:(myTh()||gTh),md=dmode();
 const sw=(a,v,l,on)=>`<button class="${on?'on':''}" data-a="${a}:${v}">${l}</button>`;
-return`<div class="c g full">${hd('star','থিম')}<div class="m">ডার্ক / লাইট</div><div class="seg">${sw('mode','auto','অটো (ফোন অনুযায়ী)',md=='auto')}${sw('mode','light','☀️ লাইট',md=='light')}${sw('mode','dark','🌙 ডার্ক',md=='dark')}</div>${can('settings')?`<div class="m">থিম কার জন্য?</div><div class="seg">${sw('scope','me','শুধু আমার',!all)}${sw('scope','all','সবার জন্য',all)}</div>`:''}<div class="m" style="line-height:1.7">${all?'এখানে বেছে নিলে সবার অ্যাপে এই থিম ডিফল্ট হবে।':'এখানে বেছে নিলে শুধু আপনার ফোনে বদলাবে, অন্য কেউ দেখবে না।'}</div><div class="thg">${!all&&myTh()?`<button class="th" data-a="pickth:def"><i style="background:linear-gradient(120deg,${TH[gTh].bg0},${TH[gTh].o1} 55%,${TH[gTh].a})"></i><span>⭐ ডিফল্টে ফিরুন</span></button>`:''}${Object.entries(TH).filter(([k])=>k!='gpd').map(([k,x])=>`<button class="th ${k==cur?'on':''}" data-a="pickth:${k}"><i style="background:linear-gradient(120deg,${x.bg0},${x.o1} 55%,${x.a})"></i><span>${x.e} ${x.n}</span>${k==cur?'<em>✓</em>':''}</button>`).join('')}</div></div>`}
+return`<div style="display:flex;flex-direction:column;gap:12px">${hd('star','থিম')}<div class="m">ডার্ক / লাইট</div><div class="seg">${sw('mode','auto','অটো (ফোন অনুযায়ী)',md=='auto')}${sw('mode','light','☀️ লাইট',md=='light')}${sw('mode','dark','🌙 ডার্ক',md=='dark')}</div>${can('settings')?`<div class="m">থিম কার জন্য?</div><div class="seg">${sw('scope','me','শুধু আমার',!all)}${sw('scope','all','সবার জন্য',all)}</div>`:''}<div class="m" style="line-height:1.7">${all?'এখানে বেছে নিলে সবার অ্যাপে এই থিম ডিফল্ট হবে।':'এখানে বেছে নিলে শুধু আপনার ফোনে বদলাবে, অন্য কেউ দেখবে না।'}</div><div class="thg">${!all&&myTh()?`<button class="th" data-a="pickth:def"><i style="background:linear-gradient(120deg,${TH[gTh].bg0},${TH[gTh].o1} 55%,${TH[gTh].a})"></i><span>⭐ ডিফল্টে ফিরুন</span></button>`:''}${Object.entries(TH).filter(([k])=>k!='gpd').map(([k,x])=>`<button class="th ${k==cur?'on':''}" data-a="pickth:${k}"><i style="background:linear-gradient(120deg,${x.bg0},${x.o1} 55%,${x.a})"></i><span>${x.e} ${x.n}</span>${k==cur?'<em>✓</em>':''}</button>`).join('')}</div></div>`}
 const dmq=matchMedia('(prefers-color-scheme: dark)');
 function dmode(){try{return LS.getItem('mode')||'auto'}catch(e){return'auto'}}
 function isDark(){const m=dmode();return m=='dark'||(m=='auto'&&dmq.matches)}
-function setMode(m){try{LS.setItem('mode',m)}catch(e){}if(m!='auto'&&!['gp','gpd'].includes(myTh()||gTh)){try{LS.setItem('myTheme','gp')}catch(e){}}refreshTheme();rr()}
+function setMode(m){try{LS.setItem('mode',m)}catch(e){}if(m!='auto'&&!['gp','gpd'].includes(myTh()||gTh)){try{LS.setItem('myTheme','gp')}catch(e){}}refreshTheme();rr();rth()}
 dmq.addEventListener&&dmq.addEventListener('change',()=>{refreshTheme();rr()});
-function morP(){return`<div class="hd full"><span class="bd" style="width:48px;height:48px;border-radius:16px">${ic('grid',26)}</span><h2 style="font-size:24px">সব সেবা</h2></div>`+GR.slice(1).map(g=>grp(g,1)).join('')+themeCard()}
+function morP(){return`<div class="hd full"><span class="bd" style="width:48px;height:48px;border-radius:16px">${ic('grid',26)}</span><h2 style="font-size:24px">সব সেবা</h2></div>`+GR.slice(1).map(g=>grp(g,1)).join('')}
 function ibP(){return`<div class="hd full"><span class="bd" style="width:48px;height:48px;border-radius:16px">${ic('dua',26)}</span><h2 style="font-size:24px">ইবাদত ও শিক্ষা</h2></div>`+grp(GR[0],1)}
 function accP(){const ca=can('accounts');return tp('acc',ca?'addacc':'')+`<div class="row full"><button class="pill" data-a="csv">${ic('dl',16)} CSV</button><button class="pill" data-a="prt:acc">${ic('pr',16)} প্রিন্ট</button><button class="pill" data-a="wa">${ic('wa',16)} শেয়ার</button></div>`+([...db.acc].reverse().map(r=>`<div class="li g" style="border-radius:18px"><div><b>${esc(r.h||'—')}</b><div class="m">${esc(r.d||'')} ${esc(r.nm||'')} ${esc(r.note||'')}</div></div><div style="text-align:right"><b class="${r.k=='আয়'?'in':'out'}">${r.k=='আয়'?'+':'−'} ${tk(r.a)}</b><br><button class="x ok" data-a="rcp:acc:${esc(r.id)}">রসিদ</button>${ca?`<button class="x gd" data-a="edit:acc:${esc(r.id)}">সম্পাদনা</button><button class="x" data-a="del:acc:${esc(r.id)}">মুছুন</button>`:''}</div></div>`).join('')||'<div class="c g m">কোনো লেনদেন নেই</div>')}
 function donP(){const d=sum(db.don),cd=can('donations');return tp('don',cd?'adddon':'')+`<div class="c g full"><div class="m">মোট জমা / লক্ষ্য</div><b style="font-size:28px">${tk(d)} / ${tk(db.goal)}</b>${can('settings')?'<button class="ghost" data-a="goal">লক্ষ্যমাত্রা বদলান</button>':''}</div>`+[...db.don].reverse().map(r=>`<div class="li g" style="border-radius:18px"><div><b>${esc(r.n||'নাম নেই')}</b><div class="m">${esc(r.d||'')} ${esc(r.h||'')}</div></div><div style="text-align:right"><b class="in">${tk(r.a)}</b><br><button class="x ok" data-a="rcp:don:${esc(r.id)}">রসিদ</button>${cd?`<button class="x gd" data-a="edit:don:${esc(r.id)}">সম্পাদনা</button><button class="x" data-a="del:don:${esc(r.id)}">মুছুন</button>`:''}</div></div>`).join('')}
@@ -651,7 +646,7 @@ addacc:()=>can('accounts')?accForm():tt(nop()),aae:v=>can('accounts')?accForm(v?
 adddon:()=>can('donations')?addK('don'):tt(nop()),
 prayer:()=>{if(!can('prayer'))return tt(nop());const K=Object.keys(db.pr);form('নামাজের সময়',[['','জামাতের সময়','sec']].concat(K.map(k=>[k,k,'time'])).concat([['jm','জুমা','time']]).concat([['','আজানের সময়','sec']]).concat(K.map((k,i)=>['az'+i,k,'time'])).concat([['azj','জুমা','time']]),async v=>{v.jumma=v.jm;delete v.jm;Object.keys(v).forEach(k=>{if(!v[k])delete v[k]});const bad=K.map((k,i)=>[k,v[k]||db.pr[k],v['az'+i]]).concat([['জুমা',v.jumma||db.jm,v.azj]]).find(x=>x[2]&&x[1]&&mins(x[2])>=mins(x[1]));if(bad)return tt(bad[0]+': আজান জামাতের আগে হতে হবে');try{const s=await FS();await s.doc('prayer/main').set(v,{merge:true});lg('নামাজ ও আজানের সময় বদল');tt('সংরক্ষণ হয়েছে')}catch(e){fail(e)}},{...db.pr,jm:db.jm,...Object.fromEntries(K.map((k,i)=>['az'+i,db.az[k]])),azj:db.azj})},
 goal:()=>{if(!can('settings'))return tt(nop());form('অনুদানের লক্ষ্য',[['g','টাকা','number']],async v=>{if(!(+v.g>0))return tt('সঠিক অঙ্ক দিন');try{const s=await FS();await s.doc('settings/main').set({goal:+v.g},{merge:true});lg('অনুদানের লক্ষ্য বদল: '+v.g);tt('সংরক্ষণ হয়েছে')}catch(e){fail(e)}},{g:db.goal})},
-mode:m=>setMode(m),scope:s=>{thScope=s;rr()},dm:()=>setMode(isDark()?'light':'dark'),pickth:id=>{if(thScope=='all'&&can('settings')){if(id=='def')return;return AC.theme(id)}return AC.mytheme(id)},theme:id=>{if(!can('settings'))return tt(nop());if(!TH[id]||id==gTh)return;const pv=gTh;gTh=id;try{LS.setItem('theme',id)}catch(e){}refreshTheme();rr();FS().then(s=>s.doc('settings/main').set({theme:id},{merge:true})).then(()=>{lg('ডিফল্ট থিম বদল: '+TH[id].n);tt(myTh()?'ডিফল্ট থিম সবার জন্য বদলেছে (আপনার নিজের থিমই চালু আছে)':'ডিফল্ট থিম সবার জন্য বদলে গেছে')}).catch(e=>{gTh=pv;try{LS.setItem('theme',pv)}catch(x){}refreshTheme();rr();fail(e)})},
+mode:m=>setMode(m),themes:()=>openTheme(),scope:s=>{thScope=s;rr();rth()},dm:()=>setMode(isDark()?'light':'dark'),pickth:id=>{setTimeout(rth,60);if(thScope=='all'&&can('settings')){if(id=='def')return;return AC.theme(id)}return AC.mytheme(id)},theme:id=>{if(!can('settings'))return tt(nop());if(!TH[id]||id==gTh)return;const pv=gTh;gTh=id;try{LS.setItem('theme',id)}catch(e){}refreshTheme();rr();FS().then(s=>s.doc('settings/main').set({theme:id},{merge:true})).then(()=>{lg('ডিফল্ট থিম বদল: '+TH[id].n);tt(myTh()?'ডিফল্ট থিম সবার জন্য বদলেছে (আপনার নিজের থিমই চালু আছে)':'ডিফল্ট থিম সবার জন্য বদলে গেছে')}).catch(e=>{gTh=pv;try{LS.setItem('theme',pv)}catch(x){}refreshTheme();rr();fail(e)})},
 mytheme:id=>{if(id=='def'){try{LS.removeItem('myTheme')}catch(e){}refreshTheme();rr();return tt('ডিফল্ট থিম চালু হয়েছে')}if(!TH[id])return;try{LS.setItem('myTheme',id)}catch(e){}refreshTheme();rr();tt('শুধু আপনার অ্যাপে থিম বদলেছে')},
 gin,gout:()=>cf('সাইন আউট করবেন?',async()=>{try{const f=await fb('auth');await f.auth().signOut();tt('সাইন আউট হয়েছে')}catch(e){fail(e)}}),
 adadd:()=>me.own&&adForm(),adedit:em=>{const x=admins.find(a=>a.id==em);if(me.own&&x)adForm(x)},
@@ -697,5 +692,4 @@ function applyTheme(id,save){if(!TH[id])id='gp';if(id=='gp'&&isDark())id='gpd';i
 gTh=TH[LS.getItem('theme')]?LS.getItem('theme'):'gp';refreshTheme();
 try{if((navigator.hardwareConcurrency||8)<=4||(navigator.deviceMemory||8)<=3)document.documentElement.classList.add('lite')}catch(e){}
 R();boot();if((matchMedia('(display-mode: standalone)').matches||navigator.standalone)&&!LS.getItem('push_token')&&'Notification' in window&&Notification.permission=='default')setTimeout(popup,1500);
-setTimeout(()=>{const s=$('#sp');if(s){s.classList.add('x');setTimeout(()=>s.remove(),700)}},2200);
 </script></body></html>
