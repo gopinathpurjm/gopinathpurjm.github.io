@@ -8,7 +8,7 @@ try{self.window=self;self.FIREBASE_CONFIG={
   appId: "1:353240144381:web:b0bd0cd84eb08e739a6194"
 };importScripts('https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js','https://www.gstatic.com/firebasejs/10.14.1/firebase-messaging-compat.js');
 if(self.FIREBASE_CONFIG&&!/^YOUR_/.test(self.FIREBASE_CONFIG.apiKey)){firebase.initializeApp(self.FIREBASE_CONFIG);firebase.messaging()}}catch(e){}
-const CACHE='gopinathpur-masjid-v28';
+const CACHE='gopinathpur-masjid-v31';
 const ASSETS=['./','./index.html','./manifest.json','./icon.svg','./icon-192.png','./icon-512.png','./icon-maskable-192.png','./icon-maskable-512.png','./apple-touch-icon.png'];
 // একটা ফাইল না থাকলেও ইনস্টল যেন ব্যর্থ না হয়
 self.addEventListener('install',e=>{self.skipWaiting();e.waitUntil(caches.open(CACHE).then(c=>Promise.allSettled(ASSETS.map(a=>c.add(a)))))});
